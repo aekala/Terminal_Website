@@ -1,4 +1,4 @@
-import "./App.css";
+import "../styles/App.css";
 import Terminal from "./Terminal";
 
 function App() {
