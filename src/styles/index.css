@@ -3,37 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-	:root {
-		--color-text-base: #56db3a;
-		--color-fill: black;
-		--color-border: var(--color-text-base);
-	}
-
-	.theme-test {
-		--color-black: #090300;
-		--color-red: #db2d20;
-		--color-green: #01a252;
-		--color-yellow: #fded02;
-		--color-blue: #01a0e4;
-		--color-purple: #a16a94;
-		--color-cyan: #b5e4f4;
-		--color-white: #a5a2a2;
-		--color-brightBlack: #5c5855;
-		--color-brightRed: #e8bbd0;
-		--color-brightGreen: #3a3432;
-		--color-brightYellow: #4a4543;
-		--color-brightBlue: #807d7c;
-		--color-brightPurple: #d6d5d4;
-		--color-brightCyan: #cdab53;
-		--color-brightWhite: #f7f7f7;
-		--color-background: #090300;
-		--color-foreground: #a5a2a2;
-
-		--color-text-base: var(--color-foreground);
-		--color-fill: var(--color-background);
-		--color-border: var(--color-text-base);
-	}
-
 	.theme-raspberry {
 		--color-black: #282a2e;
 		--color-red: #bd0940;
@@ -90,10 +59,26 @@
 		--color-ps1-path: var(--color-brightWhite);
 	}
 
-	.theme-green {
-		--color-text-base: #56db3a;
-		--color-fill: black;
-		--color-border: #56db3a;
+	.theme-dracula {
+		--color-black: #000000;
+		--color-red: #ff5555;
+		--color-green: #50fa7b;
+		--color-yellow: #f1fa8c;
+		--color-orange: #ffb86c;
+		--color-blue: #6272a4;
+		--color-pink: #ff79c6;
+		--color-purple: #bd93f9;
+		--color-cyan: #8be9fd;
+		--color-white: #ffffff;
+		--color-background: #282a36;
+		--color-foreground: #f8f8f2;
+
+		--color-text-base: var(--color-foreground);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-cyan);
+		--color-ps1-name: var(--color-orange);
+		--color-ps1-symbol: var(--color-purple);
+		--color-ps1-path: var(--color-pink);
 	}
 }
 

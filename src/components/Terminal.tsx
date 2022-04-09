@@ -1,13 +1,13 @@
 import Input from "./Input";
 import History from "./History";
 import Prompt from "./Prompt";
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import "../styles/index.css";
 
 const Terminal = () => {
 	const [command, setCommand] = useState("");
 	const [history, setHistory] = useState(["History1", "History2"]);
-	const [theme, setTheme] = useState("raspberry");
-	const containerRef = useRef(null);
+	const [theme, setTheme] = useState("ocean");
 
 	const updateCommand = (event: ChangeEvent<HTMLInputElement>) => {
 		setCommand(event.target.value);
@@ -58,7 +58,20 @@ const Terminal = () => {
 		setTheme(colorTheme);
 	};
 
-	document.body.className = "bg-theme-fill theme-" + theme;
+	useEffect(() => {
+		switch (theme) {
+			case "ocean":
+				document.body.className = "bg-theme-fill theme-ocean";
+				break;
+			case "raspberry":
+				document.body.className = "bg-theme-fill theme-raspberry";
+				break;
+			case "dracula":
+				document.body.className = "bg-theme-fill theme-dracula";
+				break;
+		}
+	}, [theme]);
+
 	return (
 		<div ref={containerRef}>
 			<History history={history} />
