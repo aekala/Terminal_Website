@@ -6,6 +6,7 @@ import { ChangeEvent, useRef, useState } from "react";
 const Terminal = () => {
 	const [command, setCommand] = useState("");
 	const [history, setHistory] = useState(["History1", "History2"]);
+	const [theme, setTheme] = useState("raspberry");
 	const containerRef = useRef(null);
 
 	const updateCommand = (event: ChangeEvent<HTMLInputElement>) => {
@@ -22,6 +23,8 @@ const Terminal = () => {
 				clear();
 			} else if (command === "about") {
 				about();
+			} else if (command.startsWith("theme")) {
+				changeTheme(command.substring(5).trim());
 			}
 		}
 	};
@@ -51,7 +54,11 @@ const Terminal = () => {
 		setCommand("");
 	};
 
-	document.body.className = "bg-theme-fill theme-raspberry";
+	const changeTheme = (colorTheme: string) => {
+		setTheme(colorTheme);
+	};
+
+	document.body.className = "bg-theme-fill theme-" + theme;
 	return (
 		<div ref={containerRef}>
 			<History history={history} />

@@ -63,9 +63,31 @@
 	}
 
 	.theme-ocean {
-		--color-text-base: #d8d8d8;
-		--color-fill: #2b68c2;
-		--color-border: #d0d0d0;
+		--color-black: #000000;
+		--color-red: #990000;
+		--color-green: #00a600;
+		--color-yellow: #999900;
+		--color-blue: #0000b2;
+		--color-purple: #b200b2;
+		--color-cyan: #00a6b2;
+		--color-white: #bfbfbf;
+		--color-brightBlack: #666666;
+		--color-brightRed: #e50000;
+		--color-brightGreen: #00d900;
+		--color-brightYellow: #e5e500;
+		--color-brightBlue: #0000ff;
+		--color-brightPurple: #e500e5;
+		--color-brightCyan: #00e5e5;
+		--color-brightWhite: #e5e5e5;
+		--color-background: #224fbc;
+		--color-foreground: #ffffff;
+
+		--color-text-base: var(--color-foreground);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-cyan);
+		--color-ps1-name: var(--color-brightWhite);
+		--color-ps1-symbol: var(--color-brightWhite);
+		--color-ps1-path: var(--color-brightWhite);
 	}
 
 	.theme-green {
