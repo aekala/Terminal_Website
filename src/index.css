@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--color-text-base: #56db3a;
+		--color-fill: black;
+		--color-border: var(--color-text-base);
+	}
+
+	.theme-test {
+		--color-black: #090300;
+		--color-red: #db2d20;
+		--color-green: #01a252;
+		--color-yellow: #fded02;
+		--color-blue: #01a0e4;
+		--color-purple: #a16a94;
+		--color-cyan: #b5e4f4;
+		--color-white: #a5a2a2;
+		--color-brightBlack: #5c5855;
+		--color-brightRed: #e8bbd0;
+		--color-brightGreen: #3a3432;
+		--color-brightYellow: #4a4543;
+		--color-brightBlue: #807d7c;
+		--color-brightPurple: #d6d5d4;
+		--color-brightCyan: #cdab53;
+		--color-brightWhite: #f7f7f7;
+		--color-background: #090300;
+		--color-foreground: #a5a2a2;
+
+		--color-text-base: var(--color-foreground);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-text-base);
+	}
+
+	.theme-raspberry {
+		--color-black: #282a2e;
+		--color-red: #bd0940;
+		--color-green: #76ab23;
+		--color-yellow: #e0de48;
+		--color-blue: #0170c5;
+		--color-purple: #7d498f;
+		--color-cyan: #3f8d83;
+		--color-white: #fffffd;
+		--color-brightBlack: #676e7a;
+		--color-brightRed: #bd6d85;
+		--color-brightGreen: #b5d680;
+		--color-brightYellow: #fffd76;
+		--color-brightBlue: #80c8ff;
+		--color-brightPurple: #ac79bb;
+		--color-brightCyan: #8abeb7;
+		--color-brightWhite: #fffffd;
+		--color-background: #3c0315;
+		--color-foreground: #fffffd;
+
+		--color-text-base: var(--color-foreground);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-red);
+		--color-ps1-name: var(--color-green);
+		--color-ps1-symbol: var(--color-white);
+		--color-ps1-path: var(--color-brightBlue);
+	}
+
+	.theme-ocean {
+		--color-text-base: #d8d8d8;
+		--color-fill: #2b68c2;
+		--color-border: #d0d0d0;
+	}
+
+	.theme-green {
+		--color-text-base: #56db3a;
+		--color-fill: black;
+		--color-border: #56db3a;
+	}
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body,
+body > div:first-child,
+div#root,
+div#root > div {
+	height: 100%;
+	overflow: auto;
+	margin: 0;
+	font-family: Consolas;
+}
+
+body {
+	padding: 0.5em;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #262626;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ebdbb2;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #d79921;
 }
