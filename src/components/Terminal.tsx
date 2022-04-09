@@ -73,7 +73,7 @@ const Terminal = () => {
 	}, [theme]);
 
 	return (
-		<div ref={containerRef}>
+		<div>
 			<History history={history} />
 			<Prompt />
 			<Input command={command} onChange={updateCommand} onSubmit={runCommand} />
