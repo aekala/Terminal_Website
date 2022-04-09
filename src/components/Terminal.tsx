@@ -15,7 +15,6 @@ const Terminal = () => {
 	const runCommand = (event: KeyboardEvent) => {
 		if (event.key === "Enter") {
 			event.preventDefault();
-			console.log(history);
 			setHistory([...history, command]);
 			setCommand("");
 
@@ -33,21 +32,22 @@ const Terminal = () => {
 	};
 
 	const about = () => {
-		const info1 = (
-			<div>
-				<p>Hi! I'm Leo and welcome to my website</p>
-				<p>
-					I'm a software engineer currently working for Liberty Mutual
-					Insurance, and in my free time I like to build projects like this
-					website.
-				</p>
-			</div>
-		);
+		const info = `
+			<div style="float: left; margin-top: 0.5em; margin-bottom: 0.5em;">
+        <img style="float: left; display: block;" src="https://pbs.twimg.com/profile_images/1455185376876826625/s1AjSxph_400x400.jpg" />
+				<div style="margin-left: 15em; margin-right: 5em;">
 
-		const info = `Hi! I'm Leo and welcome to my website.\nI'm a software engineer currently working for Liberty Mutual
-					Insurance, and in my free time I like to build projects like this
-					website.`;
-		setHistory([...history, info.toString()]);
+          <p>Hi! I'm Leo and welcome to my website.</p>
+          <br>
+          <p>
+            I'm a software engineer currently working for Liberty Mutual
+            Insurance, and in my free time I like to build projects like this
+            website.
+          </p>
+        </div>
+			</div>`;
+
+		setHistory([...history, info]);
 		setCommand("");
 	};
 

@@ -2,25 +2,18 @@ import { useEffect, useState } from "react";
 import Prompt from "./Prompt";
 
 const History = (props: any) => {
-	const historyElements = props.history.map((entry: string, index: number) => {
-		return (
-			<span className='text-3xl text-theme-base' key={index}>
-				{entry}
-			</span>
-		);
-	});
-
 	return (
-		// <div className='flex'>
 		<>
-			{historyElements.map((entry: string, index: number) => (
-				<div>
+			{props.history.map((entry: string, index: number) => (
+				<div key={index}>
 					<Prompt />
-					{entry}
+					<span
+						className='text-3xl text-theme-base'
+						dangerouslySetInnerHTML={{ __html: entry }}
+					/>
 				</div>
 			))}
 		</>
-		// </div>
 	);
 };
 
