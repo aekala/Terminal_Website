@@ -25,6 +25,7 @@ const Terminal = () => {
 				history,
 				setHistory,
 				clearHistory,
+				clearCommand,
 				command,
 				setCommand,
 				theme,
@@ -35,6 +36,9 @@ const Terminal = () => {
 
 	const clearHistory = () => {
 		setHistory([]);
+	};
+
+	const clearCommand = () => {
 		setCommand("");
 	};
 

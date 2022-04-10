@@ -5,6 +5,7 @@ const execute = (
 	history: Array<HistoryItem>,
 	setHistory: (value: Array<HistoryItem>) => void,
 	clearHistory: () => void,
+	clearCommand: () => void,
 	command: string,
 	setCommand: (value: string) => void,
 	theme: string,
@@ -15,6 +16,7 @@ const execute = (
 		tokens.shift();
 		if (endOfTokensList(tokens)) {
 			clearHistory();
+			clearCommand();
 		}
 	} else if (tokens[0] === "leofetch" || tokens[0] === "about") {
 		tokens.shift();
@@ -41,23 +43,20 @@ const execute = (
 		} else {
 			setHistory([...history, new HistoryItem(command)]);
 		}
-		setCommand("");
+		clearCommand();
 	} else if (tokens[0] === "theme") {
 		tokens.shift();
+		let newHistoryItems = [new HistoryItem(command)];
 		if (endOfTokensList(tokens)) {
-			setHistory([
-				...history,
-				new HistoryItem(command),
-				new HistoryItem(theme),
-			]);
+			newHistoryItems.push(new HistoryItem(theme, false, false));
 		} else {
 			setTheme(command.substring(6));
-			setHistory([...history, new HistoryItem(command)]);
 		}
-		setCommand("");
+		setHistory([...history, ...newHistoryItems]);
+		clearCommand();
 	} else {
 		setHistory([...history, new HistoryItem(command)]);
-		setCommand("");
+		clearCommand();
 	}
 };
 
