@@ -16,7 +16,7 @@ const execute = (
 		if (endOfTokensList(tokens)) {
 			clearHistory();
 		}
-	} else if (tokens[0] === "leofetch") {
+	} else if (tokens[0] === "leofetch" || tokens[0] === "about") {
 		tokens.shift();
 		if (endOfTokensList(tokens)) {
 			const info = `
@@ -54,7 +54,6 @@ const execute = (
 			setTheme(command.substring(6));
 			setHistory([...history, new HistoryItem(command)]);
 		}
-		// setHistory([...history, new HistoryEntry(command)]);
 		setCommand("");
 	} else {
 		setHistory([...history, new HistoryItem(command)]);
