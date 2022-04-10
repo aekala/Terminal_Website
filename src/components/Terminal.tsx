@@ -4,15 +4,15 @@ import Prompt from "./Prompt";
 import { ChangeEvent, useEffect, useState } from "react";
 import "../styles/index.css";
 import execute from "../utils/execute";
-import HistoryEntry from "../historyEntry";
+import HistoryItem from "../historyItem";
 
 const Terminal = () => {
 	const [command, setCommand] = useState("");
 	const [history, setHistory] = useState([
-		new HistoryEntry("History1"),
-		new HistoryEntry("History2"),
+		new HistoryItem("History1"),
+		new HistoryItem("History2"),
 	]);
-	const [theme, setTheme] = useState("ocean");
+	const [theme, setTheme] = useState("dracula");
 
 	const updateCommand = (event: ChangeEvent<HTMLInputElement>) => {
 		setCommand(event.target.value);

@@ -1,8 +1,10 @@
 import Prompt from "./Prompt";
-import HistoryEntry from "../historyEntry";
+import HistoryItem from "../historyItem";
+import HistoryEntry from "./HistoryEntry";
 
-const History = (props: any) => {
-	const historyOutput = props.history.map((history: HistoryEntry) => {
+const History = (props: { history: Array<HistoryItem> }) => {
+	const historyOutput = props.history.map((history: HistoryItem) => {
+		//TODO: move this logic to HistoryEntry
 		if (history.isHTML) {
 			return history.entry;
 		}
@@ -12,11 +14,7 @@ const History = (props: any) => {
 		<>
 			{historyOutput.map((entry: string, index: number) => (
 				<div key={index}>
-					<Prompt />
-					<span
-						className='text-3xl text-theme-base'
-						dangerouslySetInnerHTML={{ __html: entry }}
-					/>
+					<HistoryEntry output={entry} item={props.history[index]} />
 				</div>
 			))}
 		</>

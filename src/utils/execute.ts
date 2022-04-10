@@ -1,9 +1,9 @@
 import { tokenize, endOfTokensList } from "./tokens";
-import HistoryEntry from "../historyEntry";
+import HistoryItem from "../historyItem";
 
 const execute = (
-	history: Array<HistoryEntry>,
-	setHistory: (value: Array<HistoryEntry>) => void,
+	history: Array<HistoryItem>,
+	setHistory: (value: Array<HistoryItem>) => void,
 	clearHistory: () => void,
 	command: string,
 	setCommand: (value: string) => void,
@@ -16,7 +16,7 @@ const execute = (
 		if (endOfTokensList(tokens)) {
 			clearHistory();
 		}
-	} else if (tokens[0] === "about") {
+	} else if (tokens[0] === "leofetch") {
 		tokens.shift();
 		if (endOfTokensList(tokens)) {
 			const info = `
@@ -33,18 +33,31 @@ const execute = (
           </p>
         </div>
 			</div>`;
-			setHistory([...history, new HistoryEntry(info, true)]);
+			setHistory([
+				...history,
+				new HistoryItem(command),
+				new HistoryItem(info, true, false),
+			]);
 		} else {
-			setHistory([...history, new HistoryEntry(command)]);
+			setHistory([...history, new HistoryItem(command)]);
 		}
 		setCommand("");
 	} else if (tokens[0] === "theme") {
 		tokens.shift();
-		setTheme(command.substring(6));
-		setHistory([...history, new HistoryEntry(command)]);
+		if (endOfTokensList(tokens)) {
+			setHistory([
+				...history,
+				new HistoryItem(command),
+				new HistoryItem(theme),
+			]);
+		} else {
+			setTheme(command.substring(6));
+			setHistory([...history, new HistoryItem(command)]);
+		}
+		// setHistory([...history, new HistoryEntry(command)]);
 		setCommand("");
 	} else {
-		setHistory([...history, new HistoryEntry(command)]);
+		setHistory([...history, new HistoryItem(command)]);
 		setCommand("");
 	}
 };
