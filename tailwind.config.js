@@ -15,6 +15,7 @@ module.exports = {
 			textColor: {
 				theme: {
 					base: "var(--color-text-base)",
+					error: "var(--color-text-error)",
 				},
 			},
 			backgroundColor: {

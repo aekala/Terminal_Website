@@ -1,6 +1,11 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
 
+const generateUnrecognizedCommandMessage = (command: string): string => {
+	const msg = `<p style="color: var(--color-text-error);">command not found: '${command}'. Try 'help' to view a list of valid commands.</p>`;
+	return msg;
+};
+
 const execute = (
 	history: Array<HistoryItem>,
 	setHistory: (value: Array<HistoryItem>) => void,
@@ -55,7 +60,13 @@ const execute = (
 		setHistory([...history, ...newHistoryItems]);
 		clearCommand();
 	} else {
-		setHistory([...history, new HistoryItem(command)]);
+		const unrecognizedCommandMessage: string =
+			generateUnrecognizedCommandMessage(command);
+		setHistory([
+			...history,
+			new HistoryItem(command),
+			new HistoryItem(unrecognizedCommandMessage, true, false),
+		]);
 		clearCommand();
 	}
 };
