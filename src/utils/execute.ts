@@ -1,5 +1,6 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
+import { colorThemeList } from "./commands";
 
 const generateUnrecognizedCommandMessage = (command: string): string => {
 	const msg = `<p style="color: var(--color-text-error);">command not found: '${command}'. Try 'help' to view a list of valid commands.</p>`;
@@ -55,17 +56,26 @@ const execute = (
 		if (endOfTokensList(tokens)) {
 			newHistoryItems.push(new HistoryItem(theme, false, false));
 		} else {
-			setTheme(command.substring(6));
+			const nextToken = tokens.shift();
+			if (nextToken === " " && colorThemeList().includes(tokens[0])) {
+				setTheme(command.substring(6));
+			} else {
+				newHistoryItems.push(
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					)
+				);
+			}
 		}
 		setHistory([...history, ...newHistoryItems]);
 		clearCommand();
 	} else {
-		const unrecognizedCommandMessage: string =
-			generateUnrecognizedCommandMessage(command);
 		setHistory([
 			...history,
 			new HistoryItem(command),
-			new HistoryItem(unrecognizedCommandMessage, true, false),
+			new HistoryItem(generateUnrecognizedCommandMessage(command), true, false),
 		]);
 		clearCommand();
 	}

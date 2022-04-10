@@ -5,6 +5,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import "../styles/index.css";
 import execute from "../utils/execute";
 import HistoryItem from "../historyItem";
+import { isValidCommand } from "../utils/commands";
 
 const Terminal = () => {
 	const [command, setCommand] = useState("");
