@@ -1,5 +1,13 @@
 export const commandList = () => {
-	return ["theme", "about", "leofetch", "linkedin", "github", "clear"];
+	return [
+		"theme",
+		"themes",
+		"about",
+		"leofetch",
+		"linkedin",
+		"github",
+		"clear",
+	];
 };
 
 export const isValidCommand = (command: string) => {
@@ -9,6 +17,4 @@ export const isValidCommand = (command: string) => {
 	return commandList().includes(command);
 };
 
-export const colorThemeList = () => {
-	return ["dracula", "ocean", "raspberry"];
-};
+export const colorThemeList = ["dracula", "ocean", "raspberry"];

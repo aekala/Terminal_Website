@@ -28,10 +28,13 @@ const Terminal = () => {
 				clearHistory,
 				clearCommand,
 				command,
-				setCommand,
 				theme,
 				setTheme
 			);
+		} else if (event.ctrlKey && event.key === "c") {
+			setHistory([...history, new HistoryItem(command)]);
+			clearCommand();
+		} else if (event.key === "Tab") {
 		}
 	};
 
