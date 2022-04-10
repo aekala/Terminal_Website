@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
 import Prompt from "./Prompt";
+import HistoryEntry from "../historyEntry";
 
 const History = (props: any) => {
+	const historyOutput = props.history.map((history: HistoryEntry) => {
+		if (history.isHTML) {
+			return history.entry;
+		}
+		return history.entry.replace(/\s/g, "&nbsp;");
+	});
 	return (
 		<>
-			{props.history.map((entry: string, index: number) => (
+			{historyOutput.map((entry: string, index: number) => (
 				<div key={index}>
 					<Prompt />
 					<span
