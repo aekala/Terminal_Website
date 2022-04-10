@@ -1,6 +1,6 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
-import { colorThemeList } from "./commands";
+import { commandList, colorThemeList } from "./commands";
 
 const generateUnrecognizedCommandMessage = (command: string): string => {
 	const msg = `<p style="color: var(--color-text-error);">command not found: '${command}'. Try 'help' to view a list of valid commands.</p>`;
@@ -108,6 +108,20 @@ const execute = (
 		case "github":
 			window.open("https://github.com/aekala");
 			setHistory([...history, new HistoryItem(command)]);
+			clearCommand();
+			break;
+		case "help":
+			let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
+			commandList.forEach((c) => {
+				helpOutput += `<p>${c}</p>`;
+			});
+
+			helpOutput += "<br>[ctrl+c] to cancel command";
+			setHistory([
+				...history,
+				new HistoryItem(command),
+				new HistoryItem(helpOutput, true, false),
+			]);
 			clearCommand();
 			break;
 		default:
