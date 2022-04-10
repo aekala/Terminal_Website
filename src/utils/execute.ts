@@ -54,11 +54,23 @@ const execute = (
 		tokens.shift();
 		let newHistoryItems = [new HistoryItem(command)];
 		if (endOfTokensList(tokens)) {
-			newHistoryItems.push(new HistoryItem(theme, false, false));
+			newHistoryItems.push(new HistoryItem(theme, false, false)); // print out current theme
 		} else {
 			const nextToken = tokens.shift();
 			if (nextToken === " " && colorThemeList().includes(tokens[0])) {
-				setTheme(command.substring(6));
+				const colorTheme = tokens[0];
+				tokens.shift();
+				if (endOfTokensList(tokens)) {
+					setTheme(colorTheme); // change theme if in format "theme [themeName]"
+				} else {
+					newHistoryItems.push(
+						new HistoryItem(
+							generateUnrecognizedCommandMessage(command),
+							true,
+							false
+						)
+					);
+				}
 			} else {
 				newHistoryItems.push(
 					new HistoryItem(
@@ -70,6 +82,14 @@ const execute = (
 			}
 		}
 		setHistory([...history, ...newHistoryItems]);
+		clearCommand();
+	} else if (tokens[0] === "linkedin") {
+		window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
+		setHistory([...history, new HistoryItem(command)]);
+		clearCommand();
+	} else if (tokens[0] === "github") {
+		window.open("https://github.com/aekala");
+		setHistory([...history, new HistoryItem(command)]);
 		clearCommand();
 	} else {
 		setHistory([
