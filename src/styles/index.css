@@ -24,6 +24,7 @@
 		--color-foreground: #fffffd;
 
 		--color-text-base: var(--color-foreground);
+		--color-text-valid: var(--color-green);
 		--color-text-error: var(--color-red);
 		--color-fill: var(--color-background);
 		--color-border: var(--color-red);
@@ -53,6 +54,7 @@
 		--color-foreground: #ffffff;
 
 		--color-text-base: var(--color-foreground);
+		--color-text-valid: var(--color-green);
 		--color-text-error: var(--color-black);
 		--color-fill: var(--color-background);
 		--color-border: var(--color-cyan);
@@ -76,6 +78,7 @@
 		--color-foreground: #f8f8f2;
 
 		--color-text-base: var(--color-foreground);
+		--color-text-valid: var(--color-green);
 		--color-text-error: var(--color-red);
 		--color-fill: var(--color-background);
 		--color-border: var(--color-cyan);
