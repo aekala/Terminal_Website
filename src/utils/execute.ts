@@ -9,7 +9,7 @@ const generateUnrecognizedCommandMessage = (command: string): string => {
 
 const execute = (
 	history: Array<HistoryItem>,
-	setHistory: (value: Array<HistoryItem>) => void,
+	updateTerminal: (value: Array<HistoryItem>, resetCommand?: boolean) => void,
 	clearHistory: () => void,
 	clearCommand: () => void,
 	command: string,
@@ -23,10 +23,9 @@ const execute = (
 		case " ":
 			if (endOfTokensList(tokens)) {
 				// just print input if empty or made up solely of spaces
-				setHistory([...history, new HistoryItem(command)]);
+				updateTerminal([...history, new HistoryItem(command)]);
 			} else {
-				console.log(command);
-				setHistory([
+				updateTerminal([
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(
@@ -64,15 +63,22 @@ const execute = (
             </p>
           </div>
         </div>`;
-				setHistory([
+				updateTerminal([
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(info, true, false),
 				]);
 			} else {
-				setHistory([...history, new HistoryItem(command)]);
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
 			}
-			clearCommand();
 			break;
 
 		case "theme":
@@ -106,9 +112,7 @@ const execute = (
 					);
 				}
 			}
-			setHistory([...history, ...newHistoryItems, HistoryItem.newline()]);
-			console.log(HistoryItem.newline());
-			clearCommand();
+			updateTerminal([...history, ...newHistoryItems, HistoryItem.newline()]);
 			break;
 
 		case "themes":
@@ -117,41 +121,36 @@ const execute = (
 				themesOutput += `<p>${theme}</p>`;
 			});
 			themesOutput += `<br><p style="color: var(--color-border);">Type "theme [&lt;name&gt;]" to change theme. (e.g. "theme raspberry")</p>`;
-			setHistory([
+			updateTerminal([
 				...history,
 				new HistoryItem(command),
 				new HistoryItem(themesOutput, true, false),
 				HistoryItem.newline(),
 			]);
-			clearCommand();
 			break;
 
 		case "linkedin":
 			window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
-			setHistory([...history, new HistoryItem(command)]);
-			clearCommand();
+			updateTerminal([...history, new HistoryItem(command)]);
 			break;
 
 		case "github":
 			window.open("https://github.com/aekala");
-			setHistory([...history, new HistoryItem(command)]);
-			clearCommand();
+			updateTerminal([...history, new HistoryItem(command)]);
 			break;
 
 		case "repo":
 			window.open("https://github.com/aekala/Terminal_Website");
-			setHistory([...history, new HistoryItem(command)]);
-			clearCommand();
+			updateTerminal([...history, new HistoryItem(command)]);
 			break;
 
 		case "echo":
-			setHistory([
+			updateTerminal([
 				...history,
 				new HistoryItem(command),
 				new HistoryItem(command.substring(5), false, false), // str.substring will return "" if longer than string length
 				HistoryItem.newline(),
 			]);
-			clearCommand();
 			break;
 
 		case "help":
@@ -161,16 +160,15 @@ const execute = (
 			});
 
 			helpOutput += "<br>[ctrl+c] to cancel command<br><br>";
-			setHistory([
+			updateTerminal([
 				...history,
 				new HistoryItem(command),
 				new HistoryItem(helpOutput, true, false),
 			]);
-			clearCommand();
 			break;
 
 		default:
-			setHistory([
+			updateTerminal([
 				...history,
 				new HistoryItem(command),
 				new HistoryItem(
@@ -179,7 +177,6 @@ const execute = (
 					false
 				),
 			]);
-			clearCommand();
 	}
 };
 

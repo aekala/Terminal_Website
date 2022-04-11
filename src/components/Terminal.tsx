@@ -19,12 +19,20 @@ const Terminal = () => {
 		setCommand(event.target.value);
 	};
 
+	const updateTerminal = (
+		history: Array<HistoryItem>,
+		resetCommand: boolean = true
+	) => {
+		setHistory(history);
+		if (resetCommand) clearCommand();
+	};
+
 	const runCommand = (event: KeyboardEvent) => {
 		if (event.key === "Enter") {
 			event.preventDefault();
 			execute(
 				history,
-				setHistory,
+				updateTerminal,
 				clearHistory,
 				clearCommand,
 				command,
