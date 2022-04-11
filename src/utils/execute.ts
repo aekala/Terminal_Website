@@ -1,6 +1,7 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
 import { commandList, colorThemeList } from "./commands";
+import { doggo, ghost } from "./art";
 
 const generateUnrecognizedCommandMessage = (command: string): string => {
 	const msg = `<p style="color: var(--color-text-error);">command not found: '${command}'. Try 'help' to view a list of valid commands.</p>`;
@@ -42,6 +43,16 @@ const execute = (
 			if (endOfTokensList(tokens)) {
 				clearHistory();
 				clearCommand();
+			} else {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
 			}
 			break;
 
@@ -130,18 +141,57 @@ const execute = (
 			break;
 
 		case "linkedin":
-			window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
-			updateTerminal([...history, new HistoryItem(command)]);
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
+				updateTerminal([...history, new HistoryItem(command)]);
+			} else {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
+			}
 			break;
 
 		case "github":
-			window.open("https://github.com/aekala");
-			updateTerminal([...history, new HistoryItem(command)]);
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				window.open("https://github.com/aekala");
+				updateTerminal([...history, new HistoryItem(command)]);
+			} else {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
+			}
 			break;
 
 		case "repo":
-			window.open("https://github.com/aekala/Terminal_Website");
-			updateTerminal([...history, new HistoryItem(command)]);
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				window.open("https://github.com/aekala/Terminal_Website");
+				updateTerminal([...history, new HistoryItem(command)]);
+			} else {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
+			}
 			break;
 
 		case "echo":
@@ -154,11 +204,66 @@ const execute = (
 			break;
 
 		case "date":
-			updateTerminal([
-				...history,
-				new HistoryItem(command),
-				new HistoryItem(new Date().toString()),
-			]);
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(new Date().toString()),
+				]);
+			} else {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
+			}
+			break;
+
+		case "boo":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(ghost, true, false),
+				]);
+			} else {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
+			}
+			break;
+
+		case "doggo":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(doggo, true, false),
+				]);
+			} else {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
+			}
 			break;
 
 		case "help":

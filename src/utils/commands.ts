@@ -1,15 +1,17 @@
 export const commandList = [
 	"about",
+	"boo",
+	"clear",
 	"date",
-	"theme",
-	"themes",
+	"doggo",
+	"echo",
+	"github",
+	"help",
 	"leofetch",
 	"linkedin",
-	"github",
-	"clear",
-	"help",
 	"repo",
-	"echo",
+	"theme",
+	"themes",
 ];
 
 export const isValidCommand = (command: string) => {
