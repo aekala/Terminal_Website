@@ -153,6 +153,14 @@ const execute = (
 			]);
 			break;
 
+		case "date":
+			updateTerminal([
+				...history,
+				new HistoryItem(command),
+				new HistoryItem(new Date().toString()),
+			]);
+			break;
+
 		case "help":
 			let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
 			commandList.forEach((c) => {

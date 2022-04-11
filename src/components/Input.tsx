@@ -11,7 +11,6 @@ const Input = (props: any) => {
 				onKeyDown={props.onSubmit}
 				value={props.command}
 			/>
-			)
 		</>
 	);
 };

@@ -1,5 +1,6 @@
 export const commandList = [
 	"about",
+	"date",
 	"theme",
 	"themes",
 	"leofetch",
