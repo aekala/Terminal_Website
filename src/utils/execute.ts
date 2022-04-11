@@ -19,6 +19,25 @@ const execute = (
 	let tokens = tokenize(command);
 	const start = tokens[0];
 	switch (start) {
+		case "":
+		case " ":
+			if (endOfTokensList(tokens)) {
+				// just print input if empty or made up solely of spaces
+				setHistory([...history, new HistoryItem(command)]);
+			} else {
+				console.log(command);
+				setHistory([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(
+						generateUnrecognizedCommandMessage(command),
+						true,
+						false
+					),
+				]);
+			}
+			clearCommand();
+			break;
 		case "clear":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
@@ -26,6 +45,7 @@ const execute = (
 				clearCommand();
 			}
 			break;
+
 		case "leofetch":
 		case "about":
 			tokens.shift();
@@ -54,6 +74,7 @@ const execute = (
 			}
 			clearCommand();
 			break;
+
 		case "theme":
 			tokens.shift();
 			let newHistoryItems = [new HistoryItem(command)];
@@ -85,38 +106,61 @@ const execute = (
 					);
 				}
 			}
-			setHistory([...history, ...newHistoryItems]);
+			setHistory([...history, ...newHistoryItems, HistoryItem.newline()]);
+			console.log(HistoryItem.newline());
 			clearCommand();
 			break;
+
 		case "themes":
-			let themesOutput = "";
+			let themesOutput = `<p style="color: var(--color-text-valid);">Themes: </p>`;
 			colorThemeList.forEach((theme: string) => {
 				themesOutput += `<p>${theme}</p>`;
 			});
+			themesOutput += `<br><p style="color: var(--color-border);">Type "theme [&lt;name&gt;]" to change theme. (e.g. "theme raspberry")</p>`;
 			setHistory([
 				...history,
 				new HistoryItem(command),
 				new HistoryItem(themesOutput, true, false),
+				HistoryItem.newline(),
 			]);
 			clearCommand();
 			break;
+
 		case "linkedin":
 			window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
 			setHistory([...history, new HistoryItem(command)]);
 			clearCommand();
 			break;
+
 		case "github":
 			window.open("https://github.com/aekala");
 			setHistory([...history, new HistoryItem(command)]);
 			clearCommand();
 			break;
+
+		case "repo":
+			window.open("https://github.com/aekala/Terminal_Website");
+			setHistory([...history, new HistoryItem(command)]);
+			clearCommand();
+			break;
+
+		case "echo":
+			setHistory([
+				...history,
+				new HistoryItem(command),
+				new HistoryItem(command.substring(5), false, false), // str.substring will return "" if longer than string length
+				HistoryItem.newline(),
+			]);
+			clearCommand();
+			break;
+
 		case "help":
 			let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
 			commandList.forEach((c) => {
 				helpOutput += `<p>${c}</p>`;
 			});
 
-			helpOutput += "<br>[ctrl+c] to cancel command";
+			helpOutput += "<br>[ctrl+c] to cancel command<br><br>";
 			setHistory([
 				...history,
 				new HistoryItem(command),
@@ -124,6 +168,7 @@ const execute = (
 			]);
 			clearCommand();
 			break;
+
 		default:
 			setHistory([
 				...history,

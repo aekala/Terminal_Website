@@ -12,4 +12,8 @@ export default class HistoryItem {
 		this.isHTML = isHTML;
 		this.attachPrompt = attachPrompt;
 	}
+
+	static newline(): HistoryItem {
+		return new HistoryItem("<br>", true, false);
+	}
 }

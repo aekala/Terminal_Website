@@ -7,6 +7,8 @@ export const commandList = [
 	"github",
 	"clear",
 	"help",
+	"repo",
+	"echo",
 ];
 
 export const isValidCommand = (command: string) => {
