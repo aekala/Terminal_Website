@@ -73,7 +73,17 @@
 		--color-pink: #ff79c6;
 		--color-purple: #bd93f9;
 		--color-cyan: #8be9fd;
-		--color-white: #ffffff;
+		--color-white: #bfbfbf;
+		--color-brightBlack: #44475a;
+		--color-brightRed: #ff6e67;
+		--color-brightGreen: #5af78e;
+		--color-brightYellow: #f4f99d;
+		--color-brightOrange: #ffb86c;
+		--color-brightBlue: #ff79c6;
+		--color-brightPink: #ff79c6;
+		--color-brightPurple: #ff92d0;
+		--color-brightCyan: #9aedfe;
+		--color-brightWhite: #f8f8f2;
 		--color-background: #282a36;
 		--color-foreground: #f8f8f2;
 
