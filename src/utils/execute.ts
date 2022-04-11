@@ -60,9 +60,9 @@ const execute = (
 			if (endOfTokensList(tokens)) {
 				const info = `
          <br>
-         <div class="flex flex-row" style="margin-top: 0.5em; margin-bottom: 0.5em;">
-          <img style="display: block;" class="h-80 w-80" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" />
-          <div style="margin-left: 2em; margin-right: 2em;">
+         <div class="flex flex-row my-2">
+          <img style="background-color: #8be9fd;" class="h-80 w-80 rounded-sm" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" />
+          <div class="ml-14 mr-8">
             <p>leo@kodish</p>
             <p>----------</p>  
             <p>Name: Leo Kodish</p>
@@ -70,27 +70,28 @@ const execute = (
             <p>College: Ohio State University</p>
             <p>Hobbies: Coding, Music, Movies, Mechanical Keyboards</p>
             <p>Favorite Food: Katsu Curry Rice </p>
+            <p>Favorite Game: Persona 4 </p>
             <p>Favorite Movie: Spirited Away </p>
             <br>
             <div class="flex flex-row">
-              <div style="background-color: var(--color-black);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-red);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-green);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-yellow);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-blue);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-purple);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-cyan);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-white);" class="h-16 w-16"></div>
+              <div style="background-color: var(--color-black);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-red);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-green);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-yellow);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-blue);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-purple);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-cyan);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-white);" class="h-14 w-14"></div>
             </div>          
             <div class="flex flex-row">
-               <div style="background-color: var(--color-brightBlack);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-brightRed);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-brightGreen);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-brightYellow);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-brightBlue);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-brightPurple);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-brightCyan);" class="h-16 w-16"></div>
-              <div style="background-color: var(--color-brightWhite);" class="h-16 w-16"></div>
+              <div style="background-color: var(--color-brightBlack);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-brightRed);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-brightGreen);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-brightYellow);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-brightBlue);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-brightPurple);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-brightCyan);" class="h-14 w-14"></div>
+              <div style="background-color: var(--color-brightWhite);" class="h-14 w-14"></div>
             </div>
           </div>
         </div><br>`;
