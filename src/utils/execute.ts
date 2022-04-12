@@ -30,42 +30,6 @@ const execute = (
 			clearCommand();
 			break;
 
-		case "clear":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				clearHistory();
-				clearCommand();
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "leofetch":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(leofetch, true, false),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "emifetch": // easter egg for emily
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(emifetch, true, false),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
 		case "about":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
@@ -85,6 +49,154 @@ const execute = (
 					new HistoryItem(command),
 					new HistoryItem(info, true, false),
 				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "boo":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(ghost, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "clear":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				clearHistory();
+				clearCommand();
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "date":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(new Date().toString() + "<br><br>", true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "doggo":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(doggo, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "echo":
+			updateTerminal([
+				...history,
+				new HistoryItem(command),
+				new HistoryItem(command.substring(5), false, false), // str.substring will return "" if longer than string length
+				HistoryItem.newline(),
+			]);
+			break;
+
+		case "emifetch": // easter egg for emily
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(emifetch, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "github":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				window.open("https://github.com/aekala");
+				updateTerminal([...history, new HistoryItem(command)]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "help":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
+				commandList.forEach((cmnd) => {
+					helpOutput += `<p>${cmnd}</p>`;
+				});
+
+				helpOutput += "<br>[ctrl+c] to cancel command<br><br>";
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(helpOutput, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "leofetch":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(leofetch, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "linkedin":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
+				updateTerminal([...history, new HistoryItem(command)]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "projects":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				let projectsOutput = `<pre>${projects}</pre>`;
+
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(projectsOutput, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "repo":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				window.open("https://github.com/aekala/Terminal_Website");
+				updateTerminal([...history, new HistoryItem(command)]);
 			} else {
 				updateTerminalWithErrorMessage();
 			}
@@ -146,84 +258,6 @@ const execute = (
 			]);
 			break;
 
-		case "linkedin":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
-				updateTerminal([...history, new HistoryItem(command)]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "github":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				window.open("https://github.com/aekala");
-				updateTerminal([...history, new HistoryItem(command)]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "repo":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				window.open("https://github.com/aekala/Terminal_Website");
-				updateTerminal([...history, new HistoryItem(command)]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "echo":
-			updateTerminal([
-				...history,
-				new HistoryItem(command),
-				new HistoryItem(command.substring(5), false, false), // str.substring will return "" if longer than string length
-				HistoryItem.newline(),
-			]);
-			break;
-
-		case "date":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(new Date().toString()),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "boo":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(ghost, true, false),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "doggo":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(doggo, true, false),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
 		case "work":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
@@ -233,40 +267,6 @@ const execute = (
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(workExperienceOutput, true, false),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "projects":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				let projectsOutput = `<pre>${projects}</pre>`;
-
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(projectsOutput, true, false),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
-
-		case "help":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
-				commandList.forEach((c) => {
-					helpOutput += `<p>${c}</p>`;
-				});
-
-				helpOutput += "<br>[ctrl+c] to cancel command<br><br>";
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(helpOutput, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();
