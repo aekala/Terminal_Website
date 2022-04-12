@@ -3,6 +3,7 @@ import HistoryItem from "../historyItem";
 import { commandList, colorThemeList } from "./commands";
 import { doggo, ghost } from "./art";
 import workExperience from "./experience";
+import projects from "./projects";
 
 const execute = (
 	history: Array<HistoryItem>,
@@ -50,7 +51,7 @@ const execute = (
             <p>----------</p>  
             <p style="color: var(--color-text-base);">Name: <span style="color: var(--color-white);">Leo Kodish</span></p>
             <p style="color: var(--color-text-base);">Hometown: <span style="color: var(--color-white);">Honolulu, Hawaii</span></p>
-            <p style="color: var(--color-text-base);">College: <span style="color: var(--color-white);">Ohio State University</span></p>
+            <p style="color: var(--color-text-base);">Education: <span style="color: var(--color-white);">Ohio State University, B.S. CSE</span></p>
             <p style="color: var(--color-text-base);">Hobbies: <span style="color: var(--color-white);">Coding, Music, Movies, Mechanical Keyboards</span></p>
             <p style="color: var(--color-text-base);">Favorite Food: <span style="color: var(--color-white);">Katsu Curry Rice</span></p>
             <p style="color: var(--color-text-base);">Favorite Game: <span style="color: var(--color-white);">Persona 4</span></p>
@@ -255,6 +256,21 @@ const execute = (
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(workExperienceOutput, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "projects":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				let projectsOutput = `<pre>${projects}</pre>`;
+
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(projectsOutput, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();

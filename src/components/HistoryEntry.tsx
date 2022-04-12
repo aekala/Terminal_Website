@@ -12,7 +12,7 @@ const HistoryEntry = (props: { item: HistoryItem }) => {
 		<>
 			{props.item.attachPrompt ? <Prompt /> : null}
 			<span
-				className='text-3xl text-theme-base'
+				className='text-2xl text-theme-base'
 				dangerouslySetInnerHTML={{ __html: item.entry }}
 			/>
 		</>

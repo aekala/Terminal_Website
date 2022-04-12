@@ -9,6 +9,7 @@ export const commandList = [
 	"help",
 	"leofetch",
 	"linkedin",
+	"projects",
 	"repo",
 	"theme",
 	"themes",

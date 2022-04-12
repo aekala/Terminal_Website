@@ -1,7 +1,7 @@
 const Input = (props: any) => {
 	const inputClasses = props.isValidCommand
-		? "focus:outline-none text-3xl border-none caret-theme-border bg-theme-fill text-theme-valid"
-		: "focus:outline-none text-3xl border-none caret-theme-border bg-theme-fill text-theme-error";
+		? "focus:outline-none text-2xl border-none caret-theme-border bg-theme-fill text-theme-valid"
+		: "focus:outline-none text-2xl border-none caret-theme-border bg-theme-fill text-theme-error";
 	return (
 		<>
 			<input
