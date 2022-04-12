@@ -4,7 +4,7 @@ import { commandList, colorThemeList } from "./commands";
 import { doggo, ghost } from "./art";
 import workExperience from "./experience";
 import projects from "./projects";
-import leofetch from "./leofetch";
+import { leofetch, emifetch } from "./leofetch";
 
 const execute = (
 	history: Array<HistoryItem>,
@@ -47,6 +47,19 @@ const execute = (
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(leofetch, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "emifetch": // easter egg for emily
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(emifetch, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();
