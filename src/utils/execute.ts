@@ -3,14 +3,10 @@ import HistoryItem from "../historyItem";
 import { commandList, colorThemeList } from "./commands";
 import { doggo, ghost } from "./art";
 
-const generateUnrecognizedCommandMessage = (command: string): string => {
-	const msg = `<p style="color: var(--color-text-error);">command not found: '${command}'. Try 'help' to view a list of valid commands.</p>`;
-	return msg;
-};
-
 const execute = (
 	history: Array<HistoryItem>,
 	updateTerminal: (value: Array<HistoryItem>, resetCommand?: boolean) => void,
+	updateTerminalWithErrorMessage: any,
 	clearHistory: () => void,
 	clearCommand: () => void,
 	command: string,
@@ -26,52 +22,38 @@ const execute = (
 				// just print input if empty or made up solely of spaces
 				updateTerminal([...history, new HistoryItem(command)]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			clearCommand();
 			break;
+
 		case "clear":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
 				clearHistory();
 				clearCommand();
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
+
 		case "leofetch":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
 				const info = `
          <br>
          <div class="flex flex-row my-2">
-          <img style="background-color: #8be9fd;" class="h-80 w-80 rounded-sm" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" />
+          <img style="background-color: #8be9fd;" class="h-80 w-85 ml-3 rounded-sm" src="images/red.jpg" />
           <div class="ml-14 mr-8">
             <p>leo@kodish</p>
             <p>----------</p>  
-            <p>Name: Leo Kodish</p>
-            <p>Hometown: Honolulu, Hawaii</p>
-            <p>College: Ohio State University</p>
-            <p>Hobbies: Coding, Music, Movies, Mechanical Keyboards</p>
-            <p>Favorite Food: Katsu Curry Rice </p>
-            <p>Favorite Game: Persona 4 </p>
-            <p>Favorite Movie: Spirited Away </p>
+            <p style="color: var(--color-text-base);">Name: <span style="color: var(--color-white);">Leo Kodish</span></p>
+            <p style="color: var(--color-text-base);">Hometown: <span style="color: var(--color-white);">Honolulu, Hawaii</span></p>
+            <p style="color: var(--color-text-base);">College: <span style="color: var(--color-white);">Ohio State University</span></p>
+            <p style="color: var(--color-text-base);">Hobbies: <span style="color: var(--color-white);">Coding, Music, Movies, Mechanical Keyboards</span></p>
+            <p style="color: var(--color-text-base);">Favorite Food: <span style="color: var(--color-white);">Katsu Curry Rice</span></p>
+            <p style="color: var(--color-text-base);">Favorite Game: <span style="color: var(--color-white);">Persona 4</span></p>
+            <p style="color: var(--color-text-base);">Favorite Movie: <span style="color: var(--color-white);">The Godfather Part II</span></p>
             <br>
             <div class="flex flex-row">
               <div style="background-color: var(--color-black);" class="h-14 w-14"></div>
@@ -101,15 +83,7 @@ const execute = (
 					new HistoryItem(info, true, false),
 				]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
@@ -117,10 +91,7 @@ const execute = (
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
 				const info = `
-        <div style="float: left; margin-top: 0.5em; margin-bottom: 0.5em;">
-          <img style="float: left; display: block;" src="https://pbs.twimg.com/profile_images/1455185376876826625/s1AjSxph_400x400.jpg" />
-          <div style="margin-left: 15em; margin-right: 5em;">
-
+          <div class="mt-5">
             <p>Hi! I'm Leo and welcome to my website.</p>
             <br>
             <p>
@@ -128,23 +99,15 @@ const execute = (
               Insurance, and in my free time I like to build projects like this
               website.
             </p>
-          </div>
-        </div>`;
+            <br>
+          </div>`;
 				updateTerminal([
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(info, true, false),
 				]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
@@ -154,16 +117,24 @@ const execute = (
 			if (endOfTokensList(tokens)) {
 				newHistoryItems.push(new HistoryItem(theme, false, false)); // print out current theme
 			} else {
-				const nextToken = tokens.shift();
-				if (nextToken === " " && colorThemeList.includes(tokens[0])) {
-					const colorTheme = tokens[0];
-					tokens.shift();
+				const colorTheme = tokens.shift();
+				if (colorTheme && colorThemeList.includes(colorTheme)) {
 					if (endOfTokensList(tokens)) {
-						setTheme(colorTheme); // change theme if in format "theme [themeName]"
+						if (colorTheme === theme) {
+							newHistoryItems.push(
+								new HistoryItem(`Theme is already ${colorTheme}!`, false, false)
+							);
+						} else {
+							setTheme(colorTheme); // change theme if in format "theme [<themeName>]"
+							newHistoryItems.push(
+								new HistoryItem(`Theme changed to ${colorTheme}`, false, false)
+							);
+						}
 					} else {
+						const unrecognizedTheme = colorTheme + " " + tokens.join(" ");
 						newHistoryItems.push(
 							new HistoryItem(
-								generateUnrecognizedCommandMessage(command),
+								`<p style="color: var(--color-text-error);">theme '${unrecognizedTheme}' not found: type "theme [&lt;name&gt;]" to change theme. (e.g. "theme raspberry")</p>`,
 								true,
 								false
 							)
@@ -172,7 +143,7 @@ const execute = (
 				} else {
 					newHistoryItems.push(
 						new HistoryItem(
-							generateUnrecognizedCommandMessage(command),
+							`<p style="color: var(--color-text-error);">theme '${colorTheme}' not found: type "theme [&lt;name&gt;]" to change theme. (e.g. "theme raspberry")</p>`,
 							true,
 							false
 						)
@@ -202,15 +173,7 @@ const execute = (
 				window.open("https://www.linkedin.com/in/leo-kodish-b83aa712b/");
 				updateTerminal([...history, new HistoryItem(command)]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
@@ -220,15 +183,7 @@ const execute = (
 				window.open("https://github.com/aekala");
 				updateTerminal([...history, new HistoryItem(command)]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
@@ -238,15 +193,7 @@ const execute = (
 				window.open("https://github.com/aekala/Terminal_Website");
 				updateTerminal([...history, new HistoryItem(command)]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
@@ -268,15 +215,7 @@ const execute = (
 					new HistoryItem(new Date().toString()),
 				]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
@@ -289,15 +228,7 @@ const execute = (
 					new HistoryItem(ghost, true, false),
 				]);
 			} else {
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
-				]);
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
@@ -310,42 +241,56 @@ const execute = (
 					new HistoryItem(doggo, true, false),
 				]);
 			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "experience":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				// TODO: fix unordered list to show bullets (may end up changing design later)
+				const workExperience = `  
+        <div>
+          <p>Liberty Mutual, Seattle, WA - Software Engineer (Sept. 2020 - Present)<p>
+          <ul>
+            <li>Worked on a team composed of new hires and delivered a feature for insurance agents to easily add a vehicle through a customer&apos;s policy dashboard</li>
+            <li>1</li>
+            <li>1</li>
+          </ul>
+        </div>
+        <br>
+        `;
 				updateTerminal([
 					...history,
 					new HistoryItem(command),
-					new HistoryItem(
-						generateUnrecognizedCommandMessage(command),
-						true,
-						false
-					),
+					new HistoryItem(workExperience, true, false),
 				]);
+			} else {
+				updateTerminalWithErrorMessage();
 			}
 			break;
 
 		case "help":
-			let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
-			commandList.forEach((c) => {
-				helpOutput += `<p>${c}</p>`;
-			});
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
+				commandList.forEach((c) => {
+					helpOutput += `<p>${c}</p>`;
+				});
 
-			helpOutput += "<br>[ctrl+c] to cancel command<br><br>";
-			updateTerminal([
-				...history,
-				new HistoryItem(command),
-				new HistoryItem(helpOutput, true, false),
-			]);
+				helpOutput += "<br>[ctrl+c] to cancel command<br><br>";
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(helpOutput, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
 			break;
 
 		default:
-			updateTerminal([
-				...history,
-				new HistoryItem(command),
-				new HistoryItem(
-					generateUnrecognizedCommandMessage(command),
-					true,
-					false
-				),
-			]);
+			updateTerminalWithErrorMessage();
 	}
 };
 

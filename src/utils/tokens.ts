@@ -1,5 +1,5 @@
 export const tokenize = (str: string): Array<string> => {
-	return str.split(/( )/);
+	return str.split(" ");
 };
 
 export const endOfTokensList = (tokens: Array<string>): boolean => {

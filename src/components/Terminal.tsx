@@ -27,12 +27,26 @@ const Terminal = () => {
 		if (resetCommand) clearCommand();
 	};
 
+	const generateUnrecognizedCommandMessage = (command: string): string => {
+		const msg = `<p style="color: var(--color-text-error);">command not found: '${command}'. Try 'help' to view a list of valid commands.</p>`;
+		return msg;
+	};
+
+	const updateTerminalWithErrorMessage = () => {
+		updateTerminal([
+			...history,
+			new HistoryItem(command),
+			new HistoryItem(generateUnrecognizedCommandMessage(command), true, false),
+		]);
+	};
+
 	const runCommand = (event: KeyboardEvent) => {
 		if (event.key === "Enter") {
 			event.preventDefault();
 			execute(
 				history,
 				updateTerminal,
+				updateTerminalWithErrorMessage,
 				clearHistory,
 				clearCommand,
 				command,

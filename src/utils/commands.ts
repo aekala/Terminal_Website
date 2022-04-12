@@ -5,6 +5,7 @@ export const commandList = [
 	"date",
 	"doggo",
 	"echo",
+	"experience",
 	"github",
 	"help",
 	"leofetch",
