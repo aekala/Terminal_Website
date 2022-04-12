@@ -23,4 +23,10 @@ export const isValidCommand = (command: string) => {
 	return commandList.includes(command);
 };
 
-export const colorThemeList = ["dracula", "ocean", "raspberry"];
+export const colorThemeList = [
+	"belafonte",
+	"dracula",
+	"gruvbox",
+	"ocean",
+	"raspberry",
+];

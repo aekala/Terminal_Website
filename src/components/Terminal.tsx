@@ -70,14 +70,20 @@ const Terminal = () => {
 
 	useEffect(() => {
 		switch (theme) {
+			case "belafonte":
+				document.body.className = "bg-theme-fill theme-belafonte";
+				break;
+			case "dracula":
+				document.body.className = "bg-theme-fill theme-dracula";
+				break;
+			case "gruvbox":
+				document.body.className = "bg-theme-fill theme-gruvbox";
+				break;
 			case "ocean":
 				document.body.className = "bg-theme-fill theme-ocean";
 				break;
 			case "raspberry":
 				document.body.className = "bg-theme-fill theme-raspberry";
-				break;
-			case "dracula":
-				document.body.className = "bg-theme-fill theme-dracula";
 				break;
 		}
 	}, [theme]);
