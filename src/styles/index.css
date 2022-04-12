@@ -26,6 +26,8 @@
 		--color-text-base: var(--color-foreground);
 		--color-text-valid: var(--color-green);
 		--color-text-error: var(--color-red);
+		--color-json-key: var(--color-red);
+		--color-json-value: var(--color-green);
 		--color-fill: var(--color-background);
 		--color-border: var(--color-red);
 		--color-ps1-name: var(--color-green);
@@ -56,6 +58,8 @@
 		--color-text-base: var(--color-foreground);
 		--color-text-valid: var(--color-green);
 		--color-text-error: var(--color-black);
+		--color-json-key: var(--color-red);
+		--color-json-value: var(--color-green);
 		--color-fill: var(--color-background);
 		--color-border: var(--color-cyan);
 		--color-ps1-name: var(--color-brightWhite);
@@ -90,6 +94,8 @@
 		--color-text-base: var(--color-foreground);
 		--color-text-valid: var(--color-green);
 		--color-text-error: var(--color-red);
+		--color-json-key: var(--color-red);
+		--color-json-value: var(--color-green);
 		--color-fill: var(--color-background);
 		--color-border: var(--color-cyan);
 		--color-ps1-name: var(--color-orange);

@@ -2,6 +2,7 @@ import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
 import { commandList, colorThemeList } from "./commands";
 import { doggo, ghost } from "./art";
+import workExperiences from "./experience";
 
 const execute = (
 	history: Array<HistoryItem>,
@@ -245,25 +246,15 @@ const execute = (
 			}
 			break;
 
-		case "experience":
+		case "work":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
-				// TODO: fix unordered list to show bullets (may end up changing design later)
-				const workExperience = `  
-        <div>
-          <p>Liberty Mutual, Seattle, WA - Software Engineer (Sept. 2020 - Present)<p>
-          <ul>
-            <li>Worked on a team composed of new hires and delivered a feature for insurance agents to easily add a vehicle through a customer&apos;s policy dashboard</li>
-            <li>1</li>
-            <li>1</li>
-          </ul>
-        </div>
-        <br>
-        `;
+				let workExperienceOutput = `<pre>${workExperiences}</pre>`;
+
 				updateTerminal([
 					...history,
 					new HistoryItem(command),
-					new HistoryItem(workExperience, true, false),
+					new HistoryItem(workExperienceOutput, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();

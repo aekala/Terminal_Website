@@ -5,7 +5,6 @@ export const commandList = [
 	"date",
 	"doggo",
 	"echo",
-	"experience",
 	"github",
 	"help",
 	"leofetch",
@@ -13,6 +12,7 @@ export const commandList = [
 	"repo",
 	"theme",
 	"themes",
+	"work",
 ];
 
 export const isValidCommand = (command: string) => {
