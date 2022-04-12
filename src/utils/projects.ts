@@ -48,7 +48,7 @@ const projects = `
           <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Projects include an implementation of the Morris water navigation task, a training platform for assessing and improving neck mobility in TBI (traumatic brain injury) patients, and a relaxing game for pain distraction.",</span>
         },
         {
-          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"As a team we presented our project each year to judges consisting of medical researchers and engineering professors and won our category each year being evaluated on technical implementation, feasibility, and accessibility."</span>
+          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"As a team we presented our project each year to judges consisting of medical researchers and engineering professors and won best project in our category each year being evaluated on technical implementation, feasibility, and accessibility."</span>
         },
         {
           <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Technologies used include Unity, C#, Oculus, Google Cardboard, and Acer Mixed Reality headsets."</span>

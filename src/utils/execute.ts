@@ -4,6 +4,7 @@ import { commandList, colorThemeList } from "./commands";
 import { doggo, ghost } from "./art";
 import workExperience from "./experience";
 import projects from "./projects";
+import leofetch from "./leofetch";
 
 const execute = (
 	history: Array<HistoryItem>,
@@ -42,47 +43,10 @@ const execute = (
 		case "leofetch":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
-				const info = `
-         <br>
-         <div class="flex flex-row my-2">
-          <img style="background-color: #8be9fd;" class="h-80 w-85 ml-3 rounded-sm" src="images/red.jpg" />
-          <div class="ml-14 mr-8">
-            <p>leo@kodish</p>
-            <p>----------</p>  
-            <p style="color: var(--color-text-base);">Name: <span style="color: var(--color-white);">Leo Kodish</span></p>
-            <p style="color: var(--color-text-base);">Hometown: <span style="color: var(--color-white);">Honolulu, Hawaii</span></p>
-            <p style="color: var(--color-text-base);">Education: <span style="color: var(--color-white);">Ohio State University, B.S. CSE</span></p>
-            <p style="color: var(--color-text-base);">Hobbies: <span style="color: var(--color-white);">Coding, Music, Movies, Mechanical Keyboards</span></p>
-            <p style="color: var(--color-text-base);">Favorite Food: <span style="color: var(--color-white);">Katsu Curry Rice</span></p>
-            <p style="color: var(--color-text-base);">Favorite Game: <span style="color: var(--color-white);">Persona 4</span></p>
-            <p style="color: var(--color-text-base);">Favorite Movie: <span style="color: var(--color-white);">The Godfather Part II</span></p>
-            <br>
-            <div class="flex flex-row">
-              <div style="background-color: var(--color-black);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-red);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-green);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-yellow);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-blue);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-purple);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-cyan);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-white);" class="h-14 w-14"></div>
-            </div>          
-            <div class="flex flex-row">
-              <div style="background-color: var(--color-brightBlack);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-brightRed);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-brightGreen);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-brightYellow);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-brightBlue);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-brightPurple);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-brightCyan);" class="h-14 w-14"></div>
-              <div style="background-color: var(--color-brightWhite);" class="h-14 w-14"></div>
-            </div>
-          </div>
-        </div><br>`;
 				updateTerminal([
 					...history,
 					new HistoryItem(command),
-					new HistoryItem(info, true, false),
+					new HistoryItem(leofetch, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();
