@@ -2,7 +2,7 @@ import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
 import { commandList, colorThemeList } from "./commands";
 import { doggo, ghost } from "./art";
-import workExperiences from "./experience";
+import workExperience from "./experience";
 
 const execute = (
 	history: Array<HistoryItem>,
@@ -249,7 +249,7 @@ const execute = (
 		case "work":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
-				let workExperienceOutput = `<pre>${workExperiences}</pre>`;
+				let workExperienceOutput = `<pre>${workExperience}</pre>`;
 
 				updateTerminal([
 					...history,

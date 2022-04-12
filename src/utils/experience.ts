@@ -1,6 +1,6 @@
-const workExperiences = `
+const workExperience = `
 {
-  <span style="color: var(--color-json-key);">"workExperiences"</span>: [
+  <span style="color: var(--color-json-key);">"workHistory"</span>: [
     {
       <span style="color: var(--color-json-key);">"company"</span>: <span style="color: var(--color-json-value);">"Liberty Mutual Insurance"</span>,
       <span style="color: var(--color-json-key);">"position"</span>: <span style="color: var(--color-json-value);">"Software Engineer"</span>,
@@ -39,4 +39,4 @@ const workExperiences = `
   ]
 }`;
 
-export default workExperiences;
+export default workExperience;
