@@ -9,6 +9,7 @@ const Input = (props: any) => {
 				className={inputClasses}
 				onChange={props.onChange}
 				onKeyDown={props.onSubmit}
+				spellCheck={false}
 				value={props.command}
 			/>
 		</>

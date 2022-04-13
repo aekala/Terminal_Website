@@ -43,7 +43,7 @@ export const emifetch = `
          <div class="flex flex-row my-2">
           <img style="background-color: #8be9fd;" class="h-80 w-85 ml-3 rounded-sm" src="images/emily.jpg" />
           <div class="ml-14 mr-8">
-            <p>leo@kodish</p>
+            <p>emi@kodish-lung</p>
             <p>----------</p>  
             <p style="color: var(--color-text-base);">Name: <span style="color: var(--color-white);">Emily Kodish-Lung</span></p>
             <p style="color: var(--color-text-base);">Hometown: <span style="color: var(--color-white);">Honolulu, Hawaii</span></p>

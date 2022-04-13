@@ -79,12 +79,14 @@ const Terminal = () => {
 			case "gruvbox":
 				document.body.className = "bg-theme-fill theme-gruvbox";
 				break;
-			case "ocean":
-				document.body.className = "bg-theme-fill theme-ocean";
+			case "kokuban":
+				document.body.className = "bg-theme-fill theme-kokuban";
 				break;
 			case "raspberry":
 				document.body.className = "bg-theme-fill theme-raspberry";
 				break;
+			default:
+				document.body.className = "bg-theme-fill theme-dracula";
 		}
 	}, [theme]);
 

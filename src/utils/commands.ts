@@ -27,6 +27,6 @@ export const colorThemeList = [
 	"belafonte",
 	"dracula",
 	"gruvbox",
-	"ocean",
+	"kokuban",
 	"raspberry",
 ];

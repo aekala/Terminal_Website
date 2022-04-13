@@ -33,6 +33,9 @@
 		--color-ps1-name: var(--color-purple);
 		--color-ps1-symbol: var(--color-red);
 		--color-ps1-path: var(--color-blue);
+    --color-scrollbar-base: var(--color-yellow);
+		--color-scrollbar-track: var(--color-white);
+		--color-scrollbar-hover: var(--color-purple);
 	} */
 
 	.theme-belafonte {
@@ -65,9 +68,9 @@
 		--color-ps1-name: var(--color-purple);
 		--color-ps1-symbol: var(--color-red);
 		--color-ps1-path: var(--color-blue);
-		--color-scrollbar-base: var(--color-white);
-		--color-scrollbar-track: var(--color-brightBlack);
-		--color-scrollbar-hover: var(--color-cyan);
+		--color-scrollbar-base: var(--color-yellow);
+		--color-scrollbar-track: var(--color-white);
+		--color-scrollbar-hover: var(--color-purple);
 	}
 
 	.theme-dracula {
@@ -104,9 +107,9 @@
 		--color-ps1-name: var(--color-orange);
 		--color-ps1-symbol: var(--color-purple);
 		--color-ps1-path: var(--color-pink);
-		--color-scrollbar-base: var(--color-foreground);
+		--color-scrollbar-base: var(--color-white);
 		--color-scrollbar-track: var(--color-brightBlack);
-		--color-scrollbar-hover: var(--color-white);
+		--color-scrollbar-hover: var(--color-pink);
 	}
 
 	.theme-gruvbox {
@@ -144,39 +147,39 @@
 		--color-scrollbar-hover: var(--color-brightYellow);
 	}
 
-	.theme-ocean {
-		--color-black: #000000;
-		--color-red: #990000;
-		--color-green: #00a600;
-		--color-yellow: #999900;
-		--color-blue: #0000b2;
-		--color-purple: #b200b2;
-		--color-cyan: #00a6b2;
-		--color-white: #bfbfbf;
-		--color-brightBlack: #666666;
-		--color-brightRed: #e50000;
-		--color-brightGreen: #00d900;
-		--color-brightYellow: #e5e500;
-		--color-brightBlue: #0000ff;
-		--color-brightPurple: #e500e5;
-		--color-brightCyan: #00e5e5;
-		--color-brightWhite: #e5e5e5;
-		--color-background: #224fbc;
-		--color-foreground: #ffffff;
+	.theme-kokuban {
+		--color-black: #2e8744;
+		--color-red: #d84e4c;
+		--color-green: #95da5a;
+		--color-yellow: #d6e264;
+		--color-blue: #4b9ed7;
+		--color-purple: #945fc5;
+		--color-cyan: #d89b25;
+		--color-white: #d8e2d7;
+		--color-brightBlack: #34934f;
+		--color-brightRed: #ff4f59;
+		--color-brightGreen: #aff56a;
+		--color-brightYellow: #fcff75;
+		--color-brightBlue: #57aeff;
+		--color-brightPurple: #ae63e9;
+		--color-brightCyan: #ffaa2b;
+		--color-brightWhite: #ffffff;
+		--color-background: #0d4a08;
+		--color-foreground: #d8e2d7;
 
 		--color-text-base: var(--color-foreground);
 		--color-text-valid: var(--color-green);
-		--color-text-error: var(--color-black);
-		--color-json-key: var(--color-red);
+		--color-text-error: var(--color-red);
+		--color-json-key: var(--color-brightRed);
 		--color-json-value: var(--color-green);
 		--color-fill: var(--color-background);
-		--color-border: var(--color-white);
-		--color-ps1-name: var(--color-brightWhite);
-		--color-ps1-symbol: var(--color-brightWhite);
-		--color-ps1-path: var(--color-brightWhite);
-		--color-scrollbar-base: var(--color-white);
-		--color-scrollbar-track: var(--color-blue);
-		--color-scrollbar-hover: var(--color-brightWhite);
+		--color-border: var(--color-black);
+		--color-ps1-name: var(--color-brightBlack);
+		--color-ps1-symbol: var(--color-green);
+		--color-ps1-path: var(--color-brightCyan);
+		--color-scrollbar-base: var(--color-green);
+		--color-scrollbar-track: var(--color-black);
+		--color-scrollbar-hover: var(--color-brightGreen);
 	}
 
 	.theme-raspberry {
@@ -209,9 +212,9 @@
 		--color-ps1-name: var(--color-green);
 		--color-ps1-symbol: var(--color-white);
 		--color-ps1-path: var(--color-brightBlue);
-		--color-scrollbar-base: var(--color-foreground);
-		--color-scrollbar-track: var(--color-brightBlack);
-		--color-scrollbar-hover: var(--color-white);
+		--color-scrollbar-base: var(--color-brightRed);
+		--color-scrollbar-track: var(--color-black);
+		--color-scrollbar-hover: var(--color-red);
 	}
 }
 
