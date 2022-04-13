@@ -65,6 +65,9 @@
 		--color-ps1-name: var(--color-purple);
 		--color-ps1-symbol: var(--color-red);
 		--color-ps1-path: var(--color-blue);
+		--color-scrollbar-base: var(--color-white);
+		--color-scrollbar-track: var(--color-brightBlack);
+		--color-scrollbar-hover: var(--color-cyan);
 	}
 
 	.theme-dracula {
@@ -101,6 +104,9 @@
 		--color-ps1-name: var(--color-orange);
 		--color-ps1-symbol: var(--color-purple);
 		--color-ps1-path: var(--color-pink);
+		--color-scrollbar-base: var(--color-foreground);
+		--color-scrollbar-track: var(--color-brightBlack);
+		--color-scrollbar-hover: var(--color-white);
 	}
 
 	.theme-gruvbox {
@@ -133,6 +139,9 @@
 		--color-ps1-name: var(--color-brightCyan);
 		--color-ps1-symbol: var(--color-red);
 		--color-ps1-path: var(--color-brightYellow);
+		--color-scrollbar-base: var(--color-foreground);
+		--color-scrollbar-track: var(--color-brightBlack);
+		--color-scrollbar-hover: var(--color-brightYellow);
 	}
 
 	.theme-ocean {
@@ -161,10 +170,13 @@
 		--color-json-key: var(--color-red);
 		--color-json-value: var(--color-green);
 		--color-fill: var(--color-background);
-		--color-border: var(--color-cyan);
+		--color-border: var(--color-white);
 		--color-ps1-name: var(--color-brightWhite);
 		--color-ps1-symbol: var(--color-brightWhite);
 		--color-ps1-path: var(--color-brightWhite);
+		--color-scrollbar-base: var(--color-white);
+		--color-scrollbar-track: var(--color-blue);
+		--color-scrollbar-hover: var(--color-brightWhite);
 	}
 
 	.theme-raspberry {
@@ -197,6 +209,9 @@
 		--color-ps1-name: var(--color-green);
 		--color-ps1-symbol: var(--color-white);
 		--color-ps1-path: var(--color-brightBlue);
+		--color-scrollbar-base: var(--color-foreground);
+		--color-scrollbar-track: var(--color-brightBlack);
+		--color-scrollbar-hover: var(--color-white);
 	}
 }
 
@@ -221,14 +236,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background: #262626;
+	background: var(--color-scrollbar-track);
+	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #ebdbb2;
+	background: var(--color-scrollbar-base);
 	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #d79921;
+	background: var(--color-scrollbar-hover);
 }

@@ -89,15 +89,17 @@ const Terminal = () => {
 	}, [theme]);
 
 	return (
-		<div>
-			<History history={history} />
-			<Prompt />
-			<Input
-				command={command}
-				onChange={updateCommand}
-				onSubmit={runCommand}
-				isValidCommand={isValidCommand(command)}
-			/>
+		<div className='overflow-hidden h-full p-4'>
+			<div className='overflow-y-auto h-full'>
+				<History history={history} />
+				<Prompt />
+				<Input
+					command={command}
+					onChange={updateCommand}
+					onSubmit={runCommand}
+					isValidCommand={isValidCommand(command)}
+				/>
+			</div>
 		</div>
 	);
 };
