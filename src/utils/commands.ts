@@ -1,5 +1,6 @@
 export const commandList = [
 	"about",
+	"banner",
 	"boo",
 	"clear",
 	"date",
@@ -13,6 +14,8 @@ export const commandList = [
 	"repo",
 	"theme",
 	"themes",
+	"startup",
+	"resume",
 	"work",
 ];
 
@@ -23,10 +26,17 @@ export const isValidCommand = (command: string) => {
 	return commandList.includes(command);
 };
 
-export const colorThemeList = [
-	"belafonte",
-	"dracula",
-	"gruvbox",
-	"kokuban",
-	"raspberry",
-];
+export const autoCompleteCommand = (
+	command: string,
+	setCommand: (command: string) => void
+): string | null => {
+	if (command.trim() !== "") {
+		for (let cmd of commandList) {
+			if (cmd.startsWith(command)) {
+				setCommand(cmd);
+				return cmd;
+			}
+		}
+	}
+	return null;
+};

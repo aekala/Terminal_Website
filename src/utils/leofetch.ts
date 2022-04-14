@@ -3,14 +3,14 @@ const colorTileClass = "h-14 w-14";
 export const leofetch = `
          <br>
          <div class="flex flex-row my-2">
-          <img style="background-color: #8be9fd;" class="h-80 w-85 ml-3 rounded-sm" src="images/red.jpg" />
+          <img class="h-80 w-85 ml-3 rounded-sm" src="images/red-xs.jpg" />
           <div class="ml-14 mr-8">
             <p>leo@kodish</p>
             <p>----------</p>  
             <p style="color: var(--color-text-base);">Name: <span style="color: var(--color-white);">Leo Kodish</span></p>
             <p style="color: var(--color-text-base);">Hometown: <span style="color: var(--color-white);">Honolulu, Hawaii</span></p>
             <p style="color: var(--color-text-base);">Education: <span style="color: var(--color-white);">Ohio State University, B.S. CSE</span></p>
-            <p style="color: var(--color-text-base);">Hobbies: <span style="color: var(--color-white);">Coding, Music, Movies, Mechanical Keyboards</span></p>
+            <p style="color: var(--color-text-base);">Hobbies: <span style="color: var(--color-white);">Coding, Cooking, Music, Mechanical Keyboards</span></p>
             <p style="color: var(--color-text-base);">Favorite Food: <span style="color: var(--color-white);">Katsu Curry Rice</span></p>
             <p style="color: var(--color-text-base);">Favorite Game: <span style="color: var(--color-white);">Persona 4</span></p>
             <p style="color: var(--color-text-base);">Favorite Movie: <span style="color: var(--color-white);">The Godfather Part II</span></p>
@@ -41,7 +41,7 @@ export const leofetch = `
 export const emifetch = `
          <br>
          <div class="flex flex-row my-2">
-          <img style="background-color: #8be9fd;" class="h-80 w-85 ml-3 rounded-sm" src="images/emily.jpg" />
+          <img class="h-80 w-85 ml-3 rounded-sm" src="images/emily-sm.jpg" />
           <div class="ml-14 mr-8">
             <p>emi@kodish-lung</p>
             <p>----------</p>  

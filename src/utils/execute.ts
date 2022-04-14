@@ -1,10 +1,12 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
-import { commandList, colorThemeList } from "./commands";
-import { doggo, ghost } from "./art";
+import { colorThemeList } from "./colors";
+import { banner, doggo, ghost } from "./art";
 import workExperience from "./experience";
 import projects from "./projects";
 import { leofetch, emifetch } from "./leofetch";
+import { help } from "./help";
+import { startup } from "./startup";
 
 const execute = (
 	history: Array<HistoryItem>,
@@ -38,9 +40,8 @@ const execute = (
             <p>Hi! I'm Leo and welcome to my website.</p>
             <br>
             <p>
-              I'm a software engineer currently working for Liberty Mutual
-              Insurance, and in my free time I like to build projects like this
-              website.
+              I'm a software engineer based in Seattle, WA and currently working for Liberty Mutual
+              Insurance. 
             </p>
             <br>
           </div>`;
@@ -48,6 +49,19 @@ const execute = (
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(info, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "banner":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(banner, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();
@@ -138,16 +152,10 @@ const execute = (
 		case "help":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
-				let helpOutput = `<p style="color: var(--color-text-valid);">Available commands:</p>`;
-				commandList.forEach((cmnd) => {
-					helpOutput += `<p>${cmnd}</p>`;
-				});
-
-				helpOutput += "<br>[ctrl+c] to cancel command<br><br>";
 				updateTerminal([
 					...history,
 					new HistoryItem(command),
-					new HistoryItem(helpOutput, true, false),
+					new HistoryItem(help(), true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();
@@ -256,6 +264,27 @@ const execute = (
 				new HistoryItem(themesOutput, true, false),
 				HistoryItem.newline(),
 			]);
+			break;
+
+		case "startup":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal(startup);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "resume":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				window.open(
+					"https://docs.google.com/document/d/1iq1-6M-1oShsk6lnWcFmF4YGnUVECu3bPrWhIQhMyOM/edit?usp=sharing"
+				);
+				updateTerminal([...history, new HistoryItem(command)]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
 			break;
 
 		case "work":

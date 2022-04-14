@@ -73,6 +73,41 @@
 		--color-scrollbar-hover: var(--color-purple);
 	}
 
+	.theme-cyan {
+		--color-black: #003340;
+		--color-red: #00ccff;
+		--color-green: #00ccff;
+		--color-yellow: #00ccff;
+		--color-blue: #00ccff;
+		--color-purple: #00ccff;
+		--color-cyan: #00ccff;
+		--color-white: #00ccff;
+		--color-brightBlack: #00ccff;
+		--color-brightRed: #00ccff;
+		--color-brightGreen: #00ccff;
+		--color-brightYellow: #00ccff;
+		--color-brightBlue: #00ccff;
+		--color-brightPurple: #00ccff;
+		--color-brightCyan: #00ccff;
+		--color-brightWhite: #00ccff;
+		--color-background: #003340;
+		--color-foreground: #00ccff;
+
+		--color-text-base: var(--color-foreground);
+		--color-text-valid: var(--color-cyan);
+		--color-text-error: var(--color-cyan);
+		--color-json-key: var(--color-cyan);
+		--color-json-value: var(--color-cyan);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-cyan);
+		--color-ps1-name: var(--color-cyan);
+		--color-ps1-symbol: var(--color-cyan);
+		--color-ps1-path: var(--color-cyan);
+		--color-scrollbar-base: var(--color-cyan);
+		--color-scrollbar-track: var(--color-black);
+		--color-scrollbar-hover: var(--color-cyan);
+	}
+
 	.theme-dracula {
 		--color-black: #000000;
 		--color-red: #ff5555;
@@ -216,6 +251,41 @@
 		--color-scrollbar-track: var(--color-black);
 		--color-scrollbar-hover: var(--color-red);
 	}
+
+	.theme-tokyo {
+		--color-black: #282a2e;
+		--color-red: #f7768e;
+		--color-green: #9ece6a;
+		--color-yellow: #e0af68;
+		--color-blue: #7aa2f7;
+		--color-purple: #bb9af7;
+		--color-cyan: #7dcfff;
+		--color-white: #c0caf5;
+		--color-brightBlack: #282a2e;
+		--color-brightRed: #f7768e;
+		--color-brightGreen: #9ece6a;
+		--color-brightYellow: #e0af68;
+		--color-brightBlue: #7aa2f7;
+		--color-brightPurple: #bb9af7;
+		--color-brightCyan: #7dcfff;
+		--color-brightWhite: #c0caf5;
+		--color-background: #414868;
+		--color-foreground: #c0caf5;
+
+		--color-text-base: var(--color-foreground);
+		--color-text-valid: var(--color-green);
+		--color-text-error: var(--color-red);
+		--color-json-key: var(--color-purple);
+		--color-json-value: var(--color-cyan);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-blue);
+		--color-ps1-name: var(--color-cyan);
+		--color-ps1-symbol: var(--color-yellow);
+		--color-ps1-path: var(--color-blue);
+		--color-scrollbar-base: var(--color-blue);
+		--color-scrollbar-track: var(--color-white);
+		--color-scrollbar-hover: var(--color-purple);
+	}
 }
 
 html,
@@ -230,7 +300,7 @@ div#root > div {
 }
 
 body {
-	padding: 0.5em;
+	padding: 1em;
 }
 
 ::-webkit-scrollbar {
@@ -250,4 +320,8 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--color-scrollbar-hover);
+}
+
+a:hover {
+	text-decoration: underline;
 }

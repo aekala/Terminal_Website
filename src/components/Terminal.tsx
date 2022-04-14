@@ -1,18 +1,16 @@
-import Input from "./Input";
-import History from "./History";
-import Prompt from "./Prompt";
-import { ChangeEvent, useEffect, useState } from "react";
 import "../styles/index.css";
-import execute from "../utils/execute";
+import { ChangeEvent, useEffect, useState } from "react";
+import History from "./History";
 import HistoryItem from "../historyItem";
-import { isValidCommand } from "../utils/commands";
+import Prompt from "./Prompt";
+import Input from "./Input";
+import execute from "../utils/execute";
+import { isValidCommand, autoCompleteCommand } from "../utils/commands";
+import { startup } from "../utils/startup";
 
 const Terminal = () => {
 	const [command, setCommand] = useState("");
-	const [history, setHistory] = useState([
-		new HistoryItem("History1"),
-		new HistoryItem("History2"),
-	]);
+	const [history, setHistory] = useState(startup);
 	const [theme, setTheme] = useState("dracula");
 
 	const updateCommand = (event: ChangeEvent<HTMLInputElement>) => {
@@ -54,9 +52,16 @@ const Terminal = () => {
 				setTheme
 			);
 		} else if (event.ctrlKey && event.key === "c") {
+			event.preventDefault();
 			setHistory([...history, new HistoryItem(command)]);
 			clearCommand();
+		} else if (event.ctrlKey && event.key === "l") {
+			event.preventDefault();
+			clearHistory();
+			clearCommand();
 		} else if (event.key === "Tab") {
+			event.preventDefault();
+			autoCompleteCommand(command, setCommand);
 		}
 	};
 
@@ -73,6 +78,9 @@ const Terminal = () => {
 			case "belafonte":
 				document.body.className = "bg-theme-fill theme-belafonte";
 				break;
+			case "cyan":
+				document.body.className = "bg-theme-fill theme-cyan";
+				break;
 			case "dracula":
 				document.body.className = "bg-theme-fill theme-dracula";
 				break;
@@ -85,8 +93,11 @@ const Terminal = () => {
 			case "raspberry":
 				document.body.className = "bg-theme-fill theme-raspberry";
 				break;
+			case "tokyo":
+				document.body.className = "bg-theme-fill theme-tokyo p-4";
+				break;
 			default:
-				document.body.className = "bg-theme-fill theme-dracula";
+				document.body.className = "bg-theme-fill theme-dracula p-4";
 		}
 	}, [theme]);
 

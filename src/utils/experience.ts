@@ -9,10 +9,10 @@ const workExperience = `
       <span style="color: var(--color-json-key);">"location"</span>: <span style="color: var(--color-json-value);">"Seattle, Washington"</span>,
       <span style="color: var(--color-json-key);">"summary"</span>: [
         {
-          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Worked on a team composed of new hires and delivered a feature for insurance agents to easily add a vehicle through a customer&apos;s policy dashboard.",</span>
+          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Worked on a team composed of new hires and delivered a feature for insurance agents to easily add a vehicle through a customer&apos;s policy dashboard."</span>
         },
         {
-          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Currently working on Liberty&apos;s Rules Platform, integrating and extending IBM&apos;s Operational Decision Manager software within Liberty to further automate the processing and execution of insurance business rules.",</span>
+          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Currently working on Liberty&apos;s Rules Platform, integrating and extending IBM&apos;s Operational Decision Manager software within Liberty to further automate the processing and execution of insurance business rules."</span>
         },
         {
           <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Technologies used while at Liberty include Spring, .NET Core, Angular, Kotlin, AWS, etc."</span>
@@ -27,10 +27,10 @@ const workExperience = `
       <span style="color: var(--color-json-key);">"location"</span>: <span style="color: var(--color-json-value);">"Portsmouth, New Hampshire"</span>,
       <span style="color: var(--color-json-key);">"summary"</span>: [
         {
-          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Joined an existing development team working on Liberty&apos;s Discovery platform to provide data-driven insights across business units.",</span>
+          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Joined an existing development team working on Liberty&apos;s Discovery platform to provide data-driven insights across business units."</span>
         },
         {
-          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Delivered a rewrite of an existing full-stack application to source Bitbucket settings data from active repositories at Liberty and make it accessible for compliance monitoring.",</span>
+          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Delivered a rewrite of an existing full-stack application to source Bitbucket settings data from active repositories at Liberty and make it accessible for compliance monitoring."</span>
         },
         {
           <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Saved hours of time for compliance and product owners by automating this process."</span>
@@ -45,7 +45,7 @@ const workExperience = `
       <span style="color: var(--color-json-key);">"location"</span>: <span style="color: var(--color-json-value);">"Tel Aviv, Israel"</span>,
       <span style="color: var(--color-json-key);">"summary"</span>: [
         {
-          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Developed an internal tool to retrieve and parse client information from resumes written in both English and Hebrew sent to a Gmail inbox.",</span>
+          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Developed an internal tool to retrieve and parse client information from resumes written in both English and Hebrew sent to a Gmail inbox."</span>
         },
         { 
           <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex; width: 50rem;">"Technologies used include Node.js, Express.js, Python, and Google APIs."</span>
