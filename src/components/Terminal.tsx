@@ -1,5 +1,6 @@
-import "../styles/index.css";
+import React from "react";
 import { ChangeEvent, useEffect, useState } from "react";
+import "../styles/index.css";
 import History from "./History";
 import HistoryItem from "../historyItem";
 import Prompt from "./Prompt";
@@ -8,7 +9,7 @@ import execute from "../utils/execute";
 import { isValidCommand, autoCompleteCommand } from "../utils/commands";
 import { startup } from "../utils/startup";
 
-const Terminal = () => {
+const Terminal = React.forwardRef((props: any, ref: any) => {
 	const [command, setCommand] = useState("");
 	const [history, setHistory] = useState(startup);
 	const [theme, setTheme] = useState("dracula");
@@ -101,6 +102,10 @@ const Terminal = () => {
 		}
 	}, [theme]);
 
+	React.useEffect(() => {
+		ref.current?.focus();
+	}, [history]);
+
 	return (
 		<div className='overflow-hidden h-full p-4'>
 			<div className='overflow-y-auto h-full'>
@@ -111,10 +116,11 @@ const Terminal = () => {
 					onChange={updateCommand}
 					onSubmit={runCommand}
 					isValidCommand={isValidCommand(command)}
+					ref={ref}
 				/>
 			</div>
 		</div>
 	);
-};
+});
 
 export default Terminal;
