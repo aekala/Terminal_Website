@@ -32,28 +32,28 @@ const execute = (
 			clearCommand();
 			break;
 
-		case "about":
-			tokens.shift();
-			if (endOfTokensList(tokens)) {
-				const info = `
-          <div class="mt-5">
-            <p>Hi! I'm Leo and welcome to my website.</p>
-            <br>
-            <p>
-              I'm a software engineer based in Seattle, WA and currently working for Liberty Mutual
-              Insurance. 
-            </p>
-            <br>
-          </div>`;
-				updateTerminal([
-					...history,
-					new HistoryItem(command),
-					new HistoryItem(info, true, false),
-				]);
-			} else {
-				updateTerminalWithErrorMessage();
-			}
-			break;
+		// case "about":
+		// 	tokens.shift();
+		// 	if (endOfTokensList(tokens)) {
+		// 		const info = `
+		//       <div class="mt-5">
+		//         <p>Hi! I'm Leo and welcome to my website.</p>
+		//         <br>
+		//         <p>
+		//           I'm a software engineer based in Seattle, WA and currently working for Liberty Mutual
+		//           Insurance.
+		//         </p>
+		//         <br>
+		//       </div>`;
+		// 		updateTerminal([
+		// 			...history,
+		// 			new HistoryItem(command),
+		// 			new HistoryItem(info, true, false),
+		// 		]);
+		// 	} else {
+		// 		updateTerminalWithErrorMessage();
+		// 	}
+		// 	break;
 
 		case "banner":
 			tokens.shift();
@@ -162,6 +162,7 @@ const execute = (
 			}
 			break;
 
+		case "about":
 		case "leofetch":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
