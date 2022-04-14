@@ -103,7 +103,8 @@ const Terminal = React.forwardRef((props: any, ref: any) => {
 	}, [theme]);
 
 	React.useEffect(() => {
-		ref.current?.focus();
+		ref.current.focus();
+		ref.current.scrollIntoView({ behavior: "smooth" });
 	}, [history]);
 
 	return (
