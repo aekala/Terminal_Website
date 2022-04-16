@@ -81,7 +81,7 @@ const execute = (
 			}
 			break;
 
-		case "bunny":
+		case "bunny": // easter egg :D
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
 				updateTerminal([
