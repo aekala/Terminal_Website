@@ -1,7 +1,7 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
 import { colorThemeList } from "./colors";
-import { banner, doggo, ghost } from "./art";
+import { banner, bunny, doggo, ghost } from "./art";
 import workExperience from "./experience";
 import projects from "./projects";
 import { leofetch, emifetch } from "./leofetch";
@@ -75,6 +75,19 @@ const execute = (
 					...history,
 					new HistoryItem(command),
 					new HistoryItem(ghost, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
+
+		case "bunny":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(bunny, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();
