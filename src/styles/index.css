@@ -217,6 +217,41 @@
 		--color-json-value: var(--color-yellow);
 	}
 
+	.theme-nord {
+		--color-black: #2e3440;
+		--color-red: #bf616a;
+		--color-green: #a3be8c;
+		--color-yellow: #ebcb8b;
+		--color-blue: #5e81ac;
+		--color-purple: #b48ead;
+		--color-cyan: #8fbcbb;
+		--color-white: #d8dee9;
+		--color-brightBlack: #4c566a;
+		--color-brightRed: #d08770;
+		--color-brightGreen: #a3be8c;
+		--color-brightYellow: #ebcb8b;
+		--color-brightBlue: #81a1c1;
+		--color-brightPurple: #b48ead;
+		--color-brightCyan: #88c0d0;
+		--color-brightWhite: #eceff4;
+		--color-background: #d8dee9;
+		--color-foreground: #5e81ac;
+
+		--color-text-base: var(--color-foreground);
+		--color-text-valid: var(--color-green);
+		--color-text-error: var(--color-brightRed);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-blue);
+		--color-ps1-name: var(--color-purple);
+		--color-ps1-symbol: var(--color-cyan);
+		--color-ps1-path: var(--color-brightCyan);
+		--color-scrollbar-base: var(--color-brightBlue);
+		--color-scrollbar-track: var(--color-white);
+		--color-scrollbar-hover: var(--color-blue);
+		--color-json-key: var(--color-brightRed);
+		--color-json-value: var(--color-blue);
+	}
+
 	.theme-raspberry {
 		--color-black: #282a2e;
 		--color-red: #bd0940;

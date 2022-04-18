@@ -1,7 +1,7 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
 import { colorThemeList } from "./colors";
-import { banner, bunny, doggo, ghost } from "./art";
+import { banner, rabbit, doggo, ghost } from "./art";
 import workExperience from "./experience";
 import projects from "./projects";
 import { leofetch, emifetch } from "./leofetch";
@@ -18,7 +18,7 @@ const execute = (
 	theme: string,
 	setTheme: (value: string) => void
 ) => {
-	let tokens = tokenize(command);
+	let tokens = tokenize(command.toLowerCase());
 	const start = tokens[0];
 	switch (start) {
 		case "":
@@ -81,13 +81,13 @@ const execute = (
 			}
 			break;
 
-		case "bunny": // easter egg :D
+		case "rabbit":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {
 				updateTerminal([
 					...history,
 					new HistoryItem(command),
-					new HistoryItem(bunny, true, false),
+					new HistoryItem(rabbit, true, false),
 				]);
 			} else {
 				updateTerminalWithErrorMessage();
@@ -231,6 +231,8 @@ const execute = (
 				newHistoryItems.push(new HistoryItem(theme, false, false)); // print out current theme
 			} else {
 				const colorTheme = tokens.shift();
+				const randomTheme =
+					colorThemeList[Math.floor(Math.random() * colorThemeList.length)];
 				if (colorTheme && colorThemeList.includes(colorTheme)) {
 					if (endOfTokensList(tokens)) {
 						if (colorTheme === theme) {
@@ -247,7 +249,7 @@ const execute = (
 						const unrecognizedTheme = colorTheme + " " + tokens.join(" ");
 						newHistoryItems.push(
 							new HistoryItem(
-								`<p style="color: var(--color-text-error);">theme '${unrecognizedTheme}' not found: type "theme [&lt;name&gt;]" to change theme. (e.g. "theme raspberry")</p>`,
+								`<p style="color: var(--color-text-error);">theme '${unrecognizedTheme}' not found: type "theme [&lt;name&gt;]" to change theme. (e.g. "theme ")</p>`,
 								true,
 								false
 							)
@@ -256,7 +258,7 @@ const execute = (
 				} else {
 					newHistoryItems.push(
 						new HistoryItem(
-							`<p style="color: var(--color-text-error);">theme '${colorTheme}' not found: type "theme [&lt;name&gt;]" to change theme. (e.g. "theme raspberry")</p>`,
+							`<p style="color: var(--color-text-error);">theme '${colorTheme}' not found: type "theme [&lt;name&gt;]" to change theme. (e.g. "theme ${randomTheme}")</p>`,
 							true,
 							false
 						)
@@ -268,10 +270,12 @@ const execute = (
 
 		case "themes":
 			let themesOutput = `<p style="color: var(--color-text-valid);">Themes: </p>`;
+			const randomTheme =
+				colorThemeList[Math.floor(Math.random() * colorThemeList.length)];
 			colorThemeList.forEach((theme: string) => {
 				themesOutput += `<p>${theme}</p>`;
 			});
-			themesOutput += `<br><p style="color: var(--color-border);">Type "theme [&lt;name&gt;]" to change theme. (e.g. "theme raspberry")</p>`;
+			themesOutput += `<br><p style="color: var(--color-border);">Type "theme [&lt;name&gt;]" to change theme. (e.g. "theme ${randomTheme}")</p>`;
 			updateTerminal([
 				...history,
 				new HistoryItem(command),
@@ -287,6 +291,19 @@ const execute = (
 			} else {
 				updateTerminalWithErrorMessage();
 			}
+			break;
+
+		case "sudo":
+			tokens.shift();
+			updateTerminal([
+				...history,
+				new HistoryItem(command),
+				new HistoryItem(
+					"Hmmm, You're not Leo, so I don't think so.<br><br>",
+					true,
+					false
+				),
+			]);
 			break;
 
 		case "resume":

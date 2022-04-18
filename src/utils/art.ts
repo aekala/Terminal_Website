@@ -3,20 +3,20 @@ import packageJson from "../../package.json";
 export const doggo = `
 <pre style="color: var(--color-text-base);">
 
-   ▄▀▄▀▀▀▀▄▀▄
-   █        ▀▄      ▄
-  █  ▀  ▀     ▀▄▄  █ █
-  █ ▄ █▀ ▄       ▀▀  █
-  █  ▀▀▀▀            █
-  █                  █
-  █                  █
-   █  ▄▄  ▄▄▄▄  ▄▄  █
-   █ ▄▀█ ▄▀  █ ▄▀█ ▄▀
-    ▀   ▀     ▀   ▀
+         ▄▀▄▀▀▀▀▄▀▄         
+ ▄      ▄▀        █    
+█ █  ▄▄▀     ▀  ▀  █   
+█  ▀▀       ▄ ▀█ ▄ █    
+█            ▀▀▀▀  █    
+█                  █
+█                  █
+ █  ▄▄  ▄▄▄▄  ▄▄  █
+ ▀▄ █▀▄ █  ▀▄ █▀▄ █
+   ▀   ▀     ▀   ▀
 
 </pre>`;
 
-export const bunny = `
+export const rabbit = `
 <pre style="color: var(--color-text-base);" class="text-xs">
 
                 ████        ████    
@@ -41,37 +41,38 @@ export const bunny = `
     ██    ████████  ██    ██        
     ██  ████  ██    ████  ██        
       ████      ████  ██████   
+
       
 </pre>
 `;
 
 export const ghost = `
-<pre style="color: var(--color-text-base);" class="text-sm">
+<pre style="color: var(--color-text-base);" class="text-xs">
 
-                        ██▓▓▓▓▓▓▓▓▓▓▓▓██
-                      ████              ██▓▓
-                    ██                      ██
-                  ██                          ██      <span style="color: var(--color-red);">░░▒▒  ░░░░</span>
-                ▓▓                              ▓▓    <span style="color: var(--color-red);">░░░░░░░░░░</span>
-              ██                                  ▓▓    <span style="color: var(--color-red);">░░░░░░</span>
-              ██                                  ██      <span style="color: var(--color-red);">░░</span>
-            ▓▓              ████          ████      ██
-            ▓▓              ████          ████      ██
-            ▓▓              ████          ████      ██
-            ▓▓                                      ██
-            ▓▓                      ████            ██
-            ▓▓                                      ████
-            ▓▓                                          ██
-            ▓▓                                          ██
-    ██    ▓▓                                            ██
-  ██  ████                                        ████████
-  ██                                            ██
-  ██                                            ██
-  ██                                          ▓▓
-    ████                                    ▓▓
-        ██                                ▓▓
-          ██▓▓                        ████
-          ▒▒██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  
+                      ██▓▓▓▓▓▓▓▓▓▓▓▓██
+                    ████              ██▓▓
+                  ██                      ██
+                ██                          ██      <span style="color: var(--color-red);">░░▒▒  ░░░░</span>
+              ▓▓                              ▓▓    <span style="color: var(--color-red);">░░░░░░░░░░</span>
+            ██                                  ▓▓    <span style="color: var(--color-red);">░░░░░░</span>
+            ██                                  ██      <span style="color: var(--color-red);">░░</span>
+          ▓▓              ████          ████      ██
+          ▓▓              ████          ████      ██
+          ▓▓              ████          ████      ██
+          ▓▓                                      ██
+          ▓▓                      ████            ██
+          ▓▓                                      ████
+          ▓▓                                          ██
+          ▓▓                                          ██
+  ██    ▓▓                                            ██
+██  ████                                        ████████
+██                                            ██
+██                                            ██
+██                                          ▓▓
+  ████                                    ▓▓
+      ██                                ▓▓
+        ██▓▓                        ████
+        ▒▒██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  
 
 </pre>`;
 

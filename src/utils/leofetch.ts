@@ -10,7 +10,7 @@ export const leofetch = `
             <p style="color: var(--color-json-key);">Name: <span style="color: var(--color-json-value);">Leo Kodish</span></p>
             <p style="color: var(--color-json-key);">Hometown: <span style="color: var(--color-json-value);">Honolulu, Hawaii</span></p>
             <p style="color: var(--color-json-key);">Location: <span style="color: var(--color-json-value);">Seattle, Washington</span></p>
-            <p style="color: var(--color-json-key);">Position: <span style="color: var(--color-json-value);">Software Engineer</span></p>
+            <p style="color: var(--color-json-key);">Occupation: <span style="color: var(--color-json-value);">Software Engineer</span></p>
             <p style="color: var(--color-json-key);">Education: <span style="color: var(--color-json-value);">Ohio State University, B.S. CSE</span></p>
             <p style="color: var(--color-json-key);">Hobbies: <span style="color: var(--color-json-value);">Coding, Cooking, Music, Mechanical Keyboards</span></p>
             <p style="color: var(--color-json-key);">Favorite Food: <span style="color: var(--color-json-value);">Katsu Curry Rice</span></p>

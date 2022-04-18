@@ -11,6 +11,7 @@ export const commandList = [
 	"leofetch",
 	"linkedin",
 	"projects",
+	"rabbit",
 	"repo",
 	"theme",
 	"themes",
@@ -20,6 +21,7 @@ export const commandList = [
 ];
 
 export const isValidCommand = (command: string) => {
+	command = command.toLowerCase();
 	if (command.indexOf(" ") !== -1) {
 		command = command.substring(0, command.indexOf(" "));
 	}
@@ -30,6 +32,7 @@ export const autoCompleteCommand = (
 	command: string,
 	setCommand: (command: string) => void
 ): string | null => {
+	command = command.toLowerCase();
 	if (command.trim() !== "") {
 		for (let cmd of commandList) {
 			if (cmd.startsWith(command)) {

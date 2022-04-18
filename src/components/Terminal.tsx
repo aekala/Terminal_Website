@@ -8,6 +8,7 @@ import Input from "./Input";
 import execute from "../utils/execute";
 import { isValidCommand, autoCompleteCommand } from "../utils/commands";
 import { startup } from "../utils/startup";
+import { colorThemeClassMap, defaultColorThemeClass } from "../utils/colors";
 
 const Terminal = React.forwardRef((props: any, ref: any) => {
 	const [command, setCommand] = useState("");
@@ -75,31 +76,8 @@ const Terminal = React.forwardRef((props: any, ref: any) => {
 	};
 
 	useEffect(() => {
-		switch (theme) {
-			case "belafonte":
-				document.body.className = "bg-theme-fill theme-belafonte";
-				break;
-			case "cyan":
-				document.body.className = "bg-theme-fill theme-cyan";
-				break;
-			case "dracula":
-				document.body.className = "bg-theme-fill theme-dracula";
-				break;
-			case "gruvbox":
-				document.body.className = "bg-theme-fill theme-gruvbox";
-				break;
-			case "kokuban":
-				document.body.className = "bg-theme-fill theme-kokuban";
-				break;
-			case "raspberry":
-				document.body.className = "bg-theme-fill theme-raspberry";
-				break;
-			case "tokyo":
-				document.body.className = "bg-theme-fill theme-tokyo p-4";
-				break;
-			default:
-				document.body.className = "bg-theme-fill theme-dracula p-4";
-		}
+		document.body.className =
+			colorThemeClassMap.get(theme) || defaultColorThemeClass;
 	}, [theme]);
 
 	React.useEffect(() => {
