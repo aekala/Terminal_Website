@@ -23,9 +23,26 @@ module.exports = {
 				theme: {
 					fill: "var(--color-fill)",
 				},
+				profile: {
+					fill: "#584F63",
+				},
+			},
+			height: {
+				85: "25rem",
 			},
 			width: {
 				85: "25rem",
+			},
+			fontSize: {
+				tinyArt: "0.45rem",
+				tiny: "0.55rem",
+			},
+			screens: {
+				phone: "300px",
+				bigPhone: "400px",
+				tablet: "640px",
+				laptop: "1024px",
+				desktop: "1280px",
 			},
 		},
 	},

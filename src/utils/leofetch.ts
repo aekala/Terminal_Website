@@ -1,10 +1,11 @@
-const colorTileClass = "h-14 w-14";
+const colorTileClass =
+	"h-4 w-4 bigPhone:h-4 bigPhone:w-4 tablet:w-8 tablet:w-8 laptop:h-14 laptop:w-14";
 
 export const leofetch = `
          <br>
          <div class="flex flex-row my-2">
-          <img class="h-80 w-85 mt-6 ml-3 rounded-sm" src="images/red-xs.jpg" />
-          <div class="ml-14 mr-8">
+          <img class="bg-profile-fill rounded-md pb-1 ml-3 h-12 w-10 bigPhone:h-20 bigPhone:w-20 tablet:h-60 tablet:w-60 tablet:pb-4 laptop:h-85 laptop:w-85 laptop:pb-8" src="images/profile5.png" />
+          <div class="ml-2 mr-1 text-xs bigPhone:ml-4 bigPhone:mr-2 tablet:ml-10 tablet:mr-6 tablet:text-xl laptop:ml-14 laptop:mr-8 laptop:text-2xl">
             <p style="color: var(--color-json-key);">leo@kodish</p>
             <p style="color: var(--color-json-key);">----------</p>  
             <p style="color: var(--color-json-key);">Name: <span style="color: var(--color-json-value);">Leo Kodish</span></p>
@@ -43,8 +44,8 @@ export const leofetch = `
 export const emifetch = `
          <br>
          <div class="flex flex-row my-2">
-          <img class="h-80 w-85 ml-3 rounded-sm" src="images/emily-sm.jpg" />
-          <div class="ml-14 mr-8">
+          <img class="h-12 w-10 bigPhone:h-20 bigPhone:w-20 tablet:h-50 tablet:w-50 laptop:h-80 laptop:w-85 mt-6 ml-3 rounded-sm" src="images/emily-sm.jpg" />
+          <div class="ml-2 mr-1 text-xs bigPhone:ml-4 bigPhone:mr-2 tablet:ml-10 tablet:mr-6 tablet:text-xl laptop:ml-14 laptop:mr-8 laptop:text-2xl">
             <p style="color: var(--color-json-key);">emi@kodish-lung</p>
             <p style="color: var(--color-json-key);">----------</p>  
             <p style="color: var(--color-json-key);">Name: <span style="color: var(--color-json-value);">Emily Kodish-Lung</span></p>

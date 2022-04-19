@@ -338,23 +338,53 @@ body {
 	padding: 1em;
 }
 
-::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
+@media (min-width: 1024px) {
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--color-scrollbar-track);
+		border-radius: 5px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--color-scrollbar-base);
+		border-radius: 5px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--color-scrollbar-hover);
+	}
+
+	.json-key {
+		width: 50rem;
+	}
 }
 
-::-webkit-scrollbar-track {
-	background: var(--color-scrollbar-track);
-	border-radius: 5px;
+@media (min-width: 300px) and (max-width: 400px) {
+	.json-key {
+		width: 8rem;
+	}
 }
 
-::-webkit-scrollbar-thumb {
-	background: var(--color-scrollbar-base);
-	border-radius: 5px;
+@media (min-width: 400px) and (max-width: 640px) {
+	.json-key {
+		width: 15rem;
+	}
 }
 
-::-webkit-scrollbar-thumb:hover {
-	background: var(--color-scrollbar-hover);
+@media (min-width: 640px) and (max-width: 860px) {
+	.json-key {
+		width: 20rem;
+	}
+}
+
+@media (min-width: 860px) and (max-width: 1024px) {
+	.json-key {
+		width: 30rem;
+	}
 }
 
 a:hover {

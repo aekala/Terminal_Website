@@ -47,7 +47,7 @@ export const rabbit = `
 `;
 
 export const ghost = `
-<pre style="color: var(--color-text-base);" class="text-xs">
+<pre style="color: var(--color-text-base);" class="text-tinyArt tablet:text-sm">
 
                       ██▓▓▓▓▓▓▓▓▓▓▓▓██
                     ████              ██▓▓
@@ -77,7 +77,7 @@ export const ghost = `
 </pre>`;
 
 export const banner = `
-<pre style="color: var(--color-border);" class="text-md">
+<pre style="color: var(--color-border);" class="text-tiny tablet:text-sm laptop:text-xl">
 
 ██╗     ██╗  ██╗     ██████╗ ███████╗██╗   ██╗
 ██║     ██║ ██╔╝     ██╔══██╗██╔════╝██║   ██║

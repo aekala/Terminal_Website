@@ -1,7 +1,7 @@
 const Prompt = () => {
 	return (
 		<>
-			<label className='text-2xl font-bold'>
+			<label className='text-xs sm:text-2xl font-bold'>
 				<span className='text-theme-ps1-name'>user</span>
 				<span className='text-theme-ps1-symbol'>@</span>
 				<span className='text-theme-ps1-path'>leokodish.com</span>
