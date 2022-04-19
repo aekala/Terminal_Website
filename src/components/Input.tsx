@@ -6,7 +6,7 @@ const Input = React.forwardRef((props: any, ref: any) => {
 		: "focus:outline-none text-xs tablet:text-xl laptop:text-2xl border-none caret-theme-border bg-theme-fill text-theme-error";
 	return (
 		<>
-			<label>
+			<label htmlFor='commandInput'>
 				<input
 					type='text'
 					name='commandInput'
