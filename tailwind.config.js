@@ -25,6 +25,7 @@ module.exports = {
 				},
 				profile: {
 					fill: "#584F63",
+					fill2: "#DBA55E",
 				},
 			},
 			height: {
