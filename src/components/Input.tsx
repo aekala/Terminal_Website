@@ -6,18 +6,17 @@ const Input = React.forwardRef((props: any, ref: any) => {
 		: "focus:outline-none text-xs tablet:text-xl laptop:text-2xl border-none caret-theme-border bg-theme-fill text-theme-error";
 	return (
 		<>
-			<label htmlFor='commandInput'>
-				<input
-					type='text'
-					name='commandInput'
-					className={inputClasses}
-					onChange={props.onChange}
-					onKeyDown={props.onSubmit}
-					spellCheck={false}
-					value={props.command}
-					ref={ref}
-				/>
-			</label>
+			<label htmlFor='commandInput'></label>
+			<input
+				type='text'
+				id='commandInput'
+				className={inputClasses}
+				onChange={props.onChange}
+				onKeyDown={props.onSubmit}
+				spellCheck={false}
+				value={props.command}
+				ref={ref}
+			/>
 		</>
 	);
 });
