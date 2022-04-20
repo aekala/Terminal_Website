@@ -6,7 +6,7 @@
 
 My personal website was due for a redesign, honestly a complete tear down and reconstruction so I took the opportunity to rewrite the entire thing.
 
-This project was also a good opportunity to leverage more powerful tools than I had used on my previous website. My last site was just pure HTML, CSS, and some JSS, so for this project I used ReactJS, TypeScript, Webpack (came configured through Create-React-App), and TailwindCSS.
+This project was also a good opportunity to leverage more powerful tools than I had used on my previous website. My last site was just pure HTML, CSS, and some JS, so for this project I used ReactJS, TypeScript, Webpack (came configured through Create-React-App), and TailwindCSS.
 
 Messing around with the terminal emulator on MacOS when I was a kid was my introduction to command line interfaces and interacting with an OS in this way helped start my interest in computers and programming.
 This website is designed as a love letter to that, serving as an interactive resume to share my work experience, side projects, and external links.
