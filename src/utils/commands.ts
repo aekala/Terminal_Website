@@ -16,6 +16,7 @@ export const commandList = [
 	"theme",
 	"themes",
 	"startup",
+	"sudo",
 	"resume",
 	"work",
 ];

@@ -1,4 +1,4 @@
-const projects = `
+export const projects = `
 {
   <span style="color: var(--color-json-key);">"projects"</span>: [
     {
@@ -58,5 +58,3 @@ const projects = `
   ]
 }
 <br>`;
-
-export default projects;

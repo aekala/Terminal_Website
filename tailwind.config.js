@@ -45,6 +45,9 @@ module.exports = {
 				laptop: "1024px",
 				desktop: "1280px",
 			},
+			borderRadius: {
+				border: "2rem",
+			},
 		},
 	},
 	plugins: [],

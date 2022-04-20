@@ -3,41 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-	/* .theme- {
-		--color-black: #;
-		--color-red: #;
-		--color-green: #;
-		--color-yellow: #;
-		--color-blue: #;
-		--color-purple: #;
-		--color-cyan: #;
-		--color-white: #;
-		--color-brightBlack: #;
-		--color-brightRed: #;
-		--color-brightGreen: #;
-		--color-brightYellow: #;
-		--color-brightBlue: #;
-		--color-brightPurple: #;
-		--color-brightCyan: #;
-		--color-brightWhite: #;
-		--color-background: #;
-		--color-foreground: #;
-
-		--color-text-base: var(--color-foreground);
-		--color-text-valid: var(--color-green);
-		--color-text-error: var(--color-red);
-		--color-json-key: var(--color-red);
-		--color-json-value: var(--color-green);
-		--color-fill: var(--color-background);
-		--color-border: var(--color-purple);
-		--color-ps1-name: var(--color-purple);
-		--color-ps1-symbol: var(--color-red);
-		--color-ps1-path: var(--color-blue);
-    --color-scrollbar-base: var(--color-yellow);
-		--color-scrollbar-track: var(--color-white);
-		--color-scrollbar-hover: var(--color-purple);
-	} */
-
 	.theme-belafonte {
 		--color-black: #20111b;
 		--color-red: #be100e;
@@ -252,6 +217,41 @@
 		--color-json-value: var(--color-blue);
 	}
 
+	.theme-ocean {
+		--color-black: #000000;
+		--color-red: #970b12;
+		--color-green: #18a708;
+		--color-yellow: #99981d;
+		--color-blue: #0516af;
+		--color-purple: #6669b0;
+		--color-cyan: #2652b9;
+		--color-white: #bfbfbf;
+		--color-brightBlack: #000000;
+		--color-brightRed: #970b12;
+		--color-brightGreen: #18a708;
+		--color-brightYellow: #99981d;
+		--color-brightBlue: #0516af;
+		--color-brightPurple: #6669b0;
+		--color-brightCyan: #2652b9;
+		--color-brightWhite: #bfbfbf;
+		--color-background: #2b67c9;
+		--color-foreground: #dfe8f6;
+
+		--color-text-base: var(--color-foreground);
+		--color-text-valid: var(--color-blue);
+		--color-text-error: var(--color-red);
+		--color-fill: var(--color-background);
+		--color-border: var(--color-white);
+		--color-ps1-name: var(--color-blue);
+		--color-ps1-symbol: var(--color-blue);
+		--color-ps1-path: var(--color-blue);
+		--color-scrollbar-base: var(--color-blue);
+		--color-scrollbar-track: var(--color-white);
+		--color-scrollbar-hover: var(--color-blue);
+		--color-json-key: var(--color-black);
+		--color-json-value: var(--color-black);
+	}
+
 	.theme-raspberry {
 		--color-black: #282a2e;
 		--color-red: #bd0940;
@@ -312,9 +312,9 @@
 		--color-text-error: var(--color-red);
 		--color-fill: var(--color-background);
 		--color-border: var(--color-blue);
-		--color-ps1-name: var(--color-cyan);
-		--color-ps1-symbol: var(--color-yellow);
-		--color-ps1-path: var(--color-blue);
+		--color-ps1-name: var(--color-red);
+		--color-ps1-symbol: var(--color-blue);
+		--color-ps1-path: var(--color-yellow);
 		--color-scrollbar-base: var(--color-blue);
 		--color-scrollbar-track: var(--color-white);
 		--color-scrollbar-hover: var(--color-purple);

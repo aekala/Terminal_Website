@@ -1,4 +1,4 @@
-const workExperience = `
+export const workExperience = `
 {
   <span style="color: var(--color-json-key);">"workHistory"</span>: [
     {
@@ -45,7 +45,7 @@ const workExperience = `
       <span style="color: var(--color-json-key);">"location"</span>: <span style="color: var(--color-json-value);">"Tel Aviv, Israel"</span>,
       <span style="color: var(--color-json-key);">"summary"</span>: [
         {
-          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex;" class="json-key">"Developed an internal tool to retrieve and parse client information from resumes written in both English and Hebrew sent to a Gmail inbox."</span>
+          <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex;" class="json-key">"Developed an internal tool to retrieve and parse client information written in both English and Hebrew from resumes sent to a Gmail inbox."</span>
         },
         { 
           <span style="color: var(--color-json-key);">"info"</span>: <span style="color: var(--color-json-value); white-space: break-spaces; display: inline-flex;" class="json-key">"Technologies used include Node.js, Express.js, Python, and Google APIs."</span>
@@ -55,5 +55,3 @@ const workExperience = `
   ]
 }
 <br>`;
-
-export default workExperience;

@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/App.css";
 import Terminal from "./Terminal";
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
 
 	return (
 		<div
-			className='p-4 border-4 rounded border-theme-border'
+			className='p-4 border-4 rounded-border border-theme-border'
 			onClick={onClickAnywhere}
 		>
 			<Terminal ref={inputRef} />

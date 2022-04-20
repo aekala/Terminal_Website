@@ -1,9 +1,10 @@
 import { tokenize, endOfTokensList } from "./tokens";
 import HistoryItem from "../historyItem";
 import { colorThemeList } from "./colors";
+import { about } from "./about";
 import { banner, rabbit, doggo, ghost } from "./art";
-import workExperience from "./experience";
-import projects from "./projects";
+import { workExperience } from "./experience";
+import { projects } from "./projects";
 import { leofetch, emifetch } from "./leofetch";
 import { help } from "./help";
 import { startup } from "./startup";
@@ -32,28 +33,18 @@ const execute = (
 			clearCommand();
 			break;
 
-		// case "about":
-		// 	tokens.shift();
-		// 	if (endOfTokensList(tokens)) {
-		// 		const info = `
-		//       <div class="mt-5">
-		//         <p>Hi! I'm Leo and welcome to my website.</p>
-		//         <br>
-		//         <p>
-		//           I'm a software engineer based in Seattle, WA and currently working for Liberty Mutual
-		//           Insurance.
-		//         </p>
-		//         <br>
-		//       </div>`;
-		// 		updateTerminal([
-		// 			...history,
-		// 			new HistoryItem(command),
-		// 			new HistoryItem(info, true, false),
-		// 		]);
-		// 	} else {
-		// 		updateTerminalWithErrorMessage();
-		// 	}
-		// 	break;
+		case "about":
+			tokens.shift();
+			if (endOfTokensList(tokens)) {
+				updateTerminal([
+					...history,
+					new HistoryItem(command),
+					new HistoryItem(about, true, false),
+				]);
+			} else {
+				updateTerminalWithErrorMessage();
+			}
+			break;
 
 		case "banner":
 			tokens.shift();
@@ -175,7 +166,6 @@ const execute = (
 			}
 			break;
 
-		case "about":
 		case "leofetch":
 			tokens.shift();
 			if (endOfTokensList(tokens)) {

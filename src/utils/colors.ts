@@ -5,6 +5,7 @@ export const colorThemeList = [
 	"gruvbox",
 	"kokuban",
 	"nord",
+	"ocean",
 	"raspberry",
 	"tokyo",
 ];
@@ -16,6 +17,7 @@ export const colorThemeClassMap = new Map([
 	["gruvbox", "bg-theme-fill theme-gruvbox"],
 	["kokuban", "bg-theme-fill theme-kokuban"],
 	["nord", "bg-theme-fill theme-nord"],
+	["ocean", "bg-theme-fill theme-ocean"],
 	["raspberry", "bg-theme-fill theme-raspberry"],
 	["tokyo", "bg-theme-fill theme-tokyo"],
 ]);

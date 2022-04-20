@@ -1,46 +1,25 @@
-# Getting Started with Create React App
+# Terminal Emulator Inspired Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Startup](public/images/homepage.png)
 
-## Available Scripts
+## Background
 
-In the project directory, you can run:
+My personal website was due for a redesign, honestly a complete tear down and reconstruction so I took the opportunity to rewrite the entire thing.
 
-### `npm start`
+This project was also a good opportunity to leverage more powerful tools than I had used on my previous website. My last site was just pure HTML, CSS, and some JSS, so for this project I used ReactJS, TypeScript, Webpack (came configured through Create-React-App), and TailwindCSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Messing around with the terminal emulator on MacOS when I was a kid was my introduction to command line interfaces and interacting with an OS in this way helped start my interest in computers and programming.
+This website is designed as a love letter to that, serving as an interactive resume to share my work experience, side projects, and external links.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+While researching design inspiration I came across [m4tt72's open source terminal project](https://github.com/m4tt72/terminal) on GitHub and it was pretty much exactly what I was imagining in terms of what I wanted my new website to look like. Using that project as a reference I built this website and added more features that I wanted like changing color themes, text art, and a Neofetch inspired tool about myself that I call "Leofetch".
 
-### `npm test`
+![Leofetch](public/images/leofetch.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Hosting
 
-### `npm run build`
+My previous website was hosted using GitHubPages, but this time I used Vercel as the hosting and deployment process was incredibly smooth. All I had to do was connect my GitHub repository to Vercel and deploy this project. I was also able to easily customize the build and deploy process such as removing sourcemaps from being sent to production through the Vercel deployment dashboard. Transfering the leokodish.com domain name to point to the Vercel production deployment was also a breeze.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Testing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+I used Jest to test TypeScript utility functions I wrote for doing things like tokenizing input and checking if an inputted command is valid.
+I also used Google Lighthouse to audit the performance, responsiveness, and accessbility of this web page.
