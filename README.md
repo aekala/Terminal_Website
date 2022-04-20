@@ -22,4 +22,4 @@ My previous website was hosted using GitHubPages, but this time I used Vercel as
 ## Testing
 
 I used Jest to test TypeScript utility functions I wrote for doing things like tokenizing input and checking if an inputted command is valid.
-I also used Google Lighthouse to audit the performance, responsiveness, and accessbility of this web page.
+I also used Google Lighthouse to audit the website's performance, responsiveness, and accessbility.
