@@ -77,7 +77,7 @@ export const ghost = `
 </pre>`;
 
 export const banner = `
-<pre style="color: var(--color-border);" class="text-tinyArt tablet:text-sm laptop:text-xl">
+<pre style="color: var(--color-border);"  class="text-tinyArt tablet:text-sm laptop:text-xl">
 
 ██╗     ██╗  ██╗     ██████╗ ███████╗██╗   ██╗
 ██║     ██║ ██╔╝     ██╔══██╗██╔════╝██║   ██║
