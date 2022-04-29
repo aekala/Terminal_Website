@@ -539,6 +539,10 @@ pre {
 	.json-key {
 		width: 50rem;
 	}
+
+	.banner {
+		font-family: Consolas;
+	}
 }
 
 @media (min-width: 300px) and (max-width: 400px) {
@@ -562,6 +566,10 @@ pre {
 @media (min-width: 860px) and (max-width: 1024px) {
 	.json-key {
 		width: 30rem;
+	}
+
+	.banner {
+		font-family: Consolas;
 	}
 }
 
