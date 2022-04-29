@@ -513,7 +513,7 @@ body {
 }
 
 pre {
-	font-family: monospace;
+	font-family: "Source Code Pro";
 }
 
 @media (min-width: 1024px) {
