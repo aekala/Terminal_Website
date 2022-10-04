@@ -4,7 +4,7 @@ export const about = `
     <p>Hi! I'm Leo and welcome to my website.</p>
     <br>
     <p>
-      I'm a software engineer based in Seattle, Washington and currently working for Liberty Mutual
+      I'm a full-stack software engineer based in Seattle, Washington and currently working for Liberty Mutual
       Insurance.
     </p>
     <br>
