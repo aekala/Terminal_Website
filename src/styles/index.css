@@ -521,7 +521,7 @@ div#root > div {
 	height: 100%;
 	overflow: auto;
 	margin: 0;
-	font-family: Consolas;
+	font-family: Consolas, monospace;
 }
 
 body {
@@ -557,7 +557,7 @@ pre {
 	}
 
 	.banner {
-		font-family: Consolas;
+		font-family: Consolas, monospace;
 	}
 }
 
@@ -585,7 +585,7 @@ pre {
 	}
 
 	.banner {
-		font-family: Consolas;
+		font-family: Consolas, monospace;
 	}
 }
 
